@@ -1,4 +1,9 @@
 class Api::V1::DecisionsController < ApplicationController
+  
+	def index
+		render json: {status: 'SUCCESS', message: 'Loaded decisions', data:'{lixo:lixo}', status: :ok }
+  end
+
   def new
   end
 
@@ -17,6 +22,4 @@ class Api::V1::DecisionsController < ApplicationController
   def show
   end
 
-  def index
-  end
 end

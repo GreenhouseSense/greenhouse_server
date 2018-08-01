@@ -252,3 +252,239 @@ Migrating to CreateDecisions (20180801224702)
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('6611313979322842965')[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-08-01 23:59:52 +0100
+  [1m[35m (13.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/PedroOliveira/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/PedroOliveira/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (5.4ms)
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/decisions/index" for 127.0.0.1 at 2018-08-02 00:00:05 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/decisions/index"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/decisions" for 127.0.0.1 at 2018-08-02 00:00:08 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/decisions"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions" for 127.0.0.1 at 2018-08-02 00:00:19 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions/index" for 127.0.0.1 at 2018-08-02 00:00:40 +0100
+Processing by Api::V1::DecisionsController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/decisions/index" for 127.0.0.1 at 2018-08-02 00:00:53 +0100
+Processing by Api::V1::DecisionsController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/decisions/create" for 127.0.0.1 at 2018-08-02 00:01:40 +0100
+Processing by Api::V1::DecisionsController#create as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/decisions" for 127.0.0.1 at 2018-08-02 00:04:06 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions" for 127.0.0.1 at 2018-08-02 00:04:20 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions" for 127.0.0.1 at 2018-08-02 00:04:52 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions" for 127.0.0.1 at 2018-08-02 00:06:08 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decision" for 127.0.0.1 at 2018-08-02 00:06:17 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decision"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions/index" for 127.0.0.1 at 2018-08-02 00:06:51 +0100
+Processing by Api::V1::DecisionsController#index as */*
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/decisions/index" for 127.0.0.1 at 2018-08-02 00:07:19 +0100
+Processing by Api::V1::DecisionsController#index as */*
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
