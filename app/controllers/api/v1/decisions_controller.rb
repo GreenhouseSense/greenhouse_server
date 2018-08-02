@@ -1,25 +1,17 @@
 class Api::V1::DecisionsController < ApplicationController
-  
-	def index
-		render json: {status: 'SUCCESS', message: 'Loaded decisions', data:'{lixo:lixo}', status: :ok }
+  def add
+  	# Método POST para adicionar uma decisão à bd
   end
 
-  def new
+  def get_weeks
+  	# Método GET para obter as decições das últimas X semanas
   end
 
-  def create
+  def get_months
+  	# Método GET para obter as decições dos últimos Y meses
   end
 
-  def update
+  def get_years
+  	# Método GET para obter as decições dos últimos K anos
   end
-
-  def edit
-  end
-
-  def destroy
-  end
-
-  def show
-  end
-
 end

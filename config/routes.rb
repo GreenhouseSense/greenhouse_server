@@ -1,6 +1,42 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
+      get 'decisions/get_weeks'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      get 'decisions/get_years'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      get 'decisions/get_weel'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      get 'decisions/get_months'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      get 'decisions/get_year'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      get 'decisions/add'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
       get 'decisions/new'
     end
   end
