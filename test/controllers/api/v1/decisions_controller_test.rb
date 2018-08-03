@@ -6,6 +6,11 @@ class Api::V1::DecisionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get get_last" do
+    get api_v1_decisions_get_last_url
+    assert_response :success
+  end
+
   test "should get get_weeks" do
     get api_v1_decisions_get_weeks_url
     assert_response :success
