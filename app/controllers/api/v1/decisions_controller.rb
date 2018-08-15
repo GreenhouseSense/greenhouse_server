@@ -1,10 +1,17 @@
 class Api::V1::DecisionsController < ApplicationController
   def add
     # Método POST para adicionar uma decisão à bd
-    render json: {status: 'SUCCESS', message: 'Loaded decisions', data:'{lixo:lixo}', status: :ok }
+    new_decision = Decision.new(decision_params)
+    if new_decision.save
+      render json: {status: 'SUCCESS', message: 'Added new decision', data: new_decision}, status: :ok 
+    else
+      render json: {status: 'ERROR', message: 'Decision not added', data: new_decision.errors}, status: :unprocessable_entity
+    end
   end
 
   def get_last
+    last_decision = Decision.order("created_at").last
+    render json: {status: 'SUCCESS', message: 'Loaded decisions', data: last_decision},status: :ok
   end
 
   def get_weeks
@@ -18,5 +25,13 @@ class Api::V1::DecisionsController < ApplicationController
   def get_years
     # Método GET para obter as decições dos últimos K anos
   end
+
+  private
+   # Never trust parameters from the scary internet, only allow the white list through.
+    def decision_params
+      puts "----"
+      puts params
+      params.permit(:origin, :description)
+    end
 
 end
