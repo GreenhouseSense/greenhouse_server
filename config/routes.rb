@@ -1,28 +1,28 @@
 Rails.application.routes.draw do
-  # namespace :api do
-  #   namespace :v1 do
-  #     get 'decisions/get_last'
-  #   end
-  # end
+  namespace :api do
+    namespace :v1 do
+      get 'decisions/get_last'
+    end
+  end
 
-  # namespace :api do
-  #   namespace :v1 do
-  #     get 'decisions/get_weeks'
-  #   end
-  # end
+  namespace :api do
+    namespace :v1 do
+      get 'decisions/get_weeks'
+    end
+  end
 
-  # namespace :api do
-  #   namespace :v1 do
-  #     get 'decisions/get_years'
-  #   end
-  # end
+  namespace :api do
+    namespace :v1 do
+      get 'decisions/get_years'
+    end
+  end
 
 
-  # namespace :api do
-  #   namespace :v1 do
-  #     get 'decisions/get_months'
-  #   end
-  # end
+  namespace :api do
+    namespace :v1 do
+      get 'decisions/get_months'
+    end
+  end
 
 
   namespace :api do

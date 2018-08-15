@@ -1426,3 +1426,1159 @@ Unpermitted parameter: :decision
 Completed 200 OK in 43ms (Views: 2.4ms | ActiveRecord: 4.9ms)
 
 
+Started GET "/api/v1/decisions/get_last" for 127.0.0.1 at 2018-08-15 23:39:26 +0100
+  [1m[35m (7.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions/get_last"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions/get_last" for 127.0.0.1 at 2018-08-15 23:39:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions/get_last"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions/get_last" for 127.0.0.1 at 2018-08-15 23:39:51 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions/get_last"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions/get_last" for 127.0.0.1 at 2018-08-15 23:40:09 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions/get_last"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions/get_last" for 127.0.0.1 at 2018-08-15 23:40:17 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions/get_last"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions/get_last" for 127.0.0.1 at 2018-08-15 23:40:37 +0100
+Processing by Api::V1::DecisionsController#get_last as */*
+  [1m[36mDecision Load (7.9ms)[0m  [1m[34mSELECT  `decisions`.* FROM `decisions` ORDER BY created_at DESC LIMIT 1[0m
+Completed 200 OK in 39ms (Views: 0.9ms | ActiveRecord: 18.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-15 23:50:49 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2,3,4,5]", "decision"=>{"description"=>"[1,2,3,4,5]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[1,2,3,4,5]', 'várias', '2018-08-15 22:50:49', '2018-08-15 22:50:49')[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-15 23:56:32 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+    message: "%{value} is not a description" }
+           ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-15 23:56:39 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+    message: "%{value} is not a description" }
+           ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-15 23:57:15 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:3: syntax error, unexpected '}', expecting =>
+	validates :description, inclusion: { in: {1..10},
+	                                                ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/decision.rb:3: syntax error, unexpected '}', expecting =>
+app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:00:48 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:01:15 +0100
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:01:42 +0100
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:3: syntax error, unexpected '^'
+	validates :description, exclusion: { :in /^[a-zA-Z]*$/,
+	                                           ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:3: syntax error, unexpected ',', expecting keyword_end
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/decision.rb:3: syntax error, unexpected '^'
+app/models/decision.rb:3: syntax error, unexpected ',', expecting keyword_end
+app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:02:19 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:3: syntax error, unexpected tSTRING_BEG, expecting =>
+	validates :description, exclusion: { :in '/^[a-zA-Z]*$/',
+	                                          ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:3: syntax error, unexpected ',', expecting keyword_end
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/decision.rb:3: syntax error, unexpected tSTRING_BEG, expecting =>
+app/models/decision.rb:3: syntax error, unexpected ',', expecting keyword_end
+app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:02:33 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:3: syntax error, unexpected keyword_in, expecting '}'
+	validates :description, exclusion: { in => '/^[a-zA-Z]*$/',
+	                                       ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:3: syntax error, unexpected ',', expecting keyword_end
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/decision.rb:3: syntax error, unexpected keyword_in, expecting '}'
+app/models/decision.rb:3: syntax error, unexpected ',', expecting keyword_end
+app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:03:24 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:03:42 +0100
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:05:34 +0100
+  [1m[35m (3.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:05:58 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:06:07 +0100
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:06:24 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:07:48 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:08:13 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:08:24 +0100
+  [1m[35m (6.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:10:22 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:10:36 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1]", "decision"=>{"description"=>"[1]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[1]', 'várias', '2018-08-15 23:10:36', '2018-08-15 23:10:36')[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 20ms (Views: 1.0ms | ActiveRecord: 17.9ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:11:01 +0100
+  [1m[35m (2.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1as]", "decision"=>{"description"=>"[1as]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[1as]', 'várias', '2018-08-15 23:11:11', '2018-08-15 23:11:11')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:12:07 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"%w(www us ca jp)", "decision"=>{"description"=>"%w(www us ca jp)", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('%w(www us ca jp)', 'várias', '2018-08-15 23:12:07', '2018-08-15 23:12:07')[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 27ms (Views: 0.4ms | ActiveRecord: 13.9ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:12:21 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"www us ca jp", "decision"=>{"description"=>"www us ca jp", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('www us ca jp', 'várias', '2018-08-15 23:12:21', '2018-08-15 23:12:21')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:12:38 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"www us ca jp", "decision"=>{"description"=>"www us ca jp", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('www us ca jp', 'várias', '2018-08-15 23:12:39', '2018-08-15 23:12:39')[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 22ms (Views: 1.0ms | ActiveRecord: 13.2ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:12:47 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"www ad", "decision"=>{"description"=>"www ad", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('www ad', 'várias', '2018-08-15 23:12:47', '2018-08-15 23:12:47')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 3.1ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:12:49 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"www ad", "decision"=>{"description"=>"www ad", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('www ad', 'várias', '2018-08-15 23:12:49', '2018-08-15 23:12:49')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:13:06 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"www ad", "decision"=>{"description"=>"www ad", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 657ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:13:47 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:13:48 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:14:07 +0100
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:14:28 +0100
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+NameError (undefined local variable or method `a' for #<Class:0x007f83a0ba8940>):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:15:02 +0100
+  
+NameError (undefined local variable or method `a' for #<Class:0x007f83a1436878>):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:15:03 +0100
+  
+NameError (undefined local variable or method `a' for #<Class:0x007f83a13a6278>):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:15:19 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"aa", "decision"=>{"description"=>"aa", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 727ms (Views: 0.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:15:28 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"A", "decision"=>{"description"=>"A", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 7ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:15:35 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"1", "decision"=>{"description"=>"1", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:15:48 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"1", "decision"=>{"description"=>"1", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (15.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('1', 'várias', '2018-08-15 23:15:48', '2018-08-15 23:15:48')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 49ms (Views: 0.6ms | ActiveRecord: 35.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:15:53 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"a", "decision"=>{"description"=>"a", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('a', 'várias', '2018-08-15 23:15:53', '2018-08-15 23:15:53')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:19:14 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+    message: "%{value} is reserved." }
+           ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:19:28 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+    message: "%{value} is reserved." }
+           ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:19:29 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+    message: "%{value} is reserved." }
+           ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:19:33 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+    message: "%{value} is reserved." }
+           ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/decision.rb:4: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/models/decision.rb:4: syntax error, unexpected '}', expecting keyword_end
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:19:44 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:19:56 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:20:05 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:20:28 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:20:41 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:20:55 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:21:00 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:21:06 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:21:12 +0100
+  
+ArgumentError (An object with the method #include? or a proc, lambda or symbol is required, and must be supplied as the :in (or :within) option of the configuration hash):
+  
+app/models/decision.rb:3:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:23:00 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"1", "decision"=>{"description"=>"1", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 8ms (Views: 0.2ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:23:08 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"a@e.com", "decision"=>{"description"=>"a@e.com", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:23:21 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"a@e.com", "decision"=>{"description"=>"a@e.com", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 12ms (Views: 0.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:23:58 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"a", "decision"=>{"description"=>"a", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 7ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:24:03 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"adasdad@asdasd", "decision"=>{"description"=>"adasdad@asdasd", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:24:07 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"adasdad@AAA", "decision"=>{"description"=>"adasdad@AAA", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:24:12 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"adasdad@AAA.com", "decision"=>{"description"=>"adasdad@AAA.com", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:24:28 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"adasdad @AAA.com", "decision"=>{"description"=>"adasdad @AAA.com", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 9ms (Views: 0.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:24:35 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"adasdad@AAA.com", "decision"=>{"description"=>"adasdad@AAA.com", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:24:42 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"a", "decision"=>{"description"=>"a", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:24:48 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"a@a", "decision"=>{"description"=>"a@a", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 9ms (Views: 0.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:26:08 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"a@a", "decision"=>{"description"=>"a@a", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 10ms (Views: 0.2ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:26:12 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"1", "decision"=>{"description"=>"1", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('1', 'várias', '2018-08-15 23:26:12', '2018-08-15 23:26:12')[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 20ms (Views: 2.6ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:26:17 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/decisions/get_last" for 127.0.0.1 at 2018-08-16 00:26:37 +0100
+Processing by Api::V1::DecisionsController#get_last as */*
+  [1m[36mDecision Load (1.6ms)[0m  [1m[34mSELECT  `decisions`.* FROM `decisions` ORDER BY created_at DESC LIMIT 1[0m
+Completed 200 OK in 15ms (Views: 1.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:27:16 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 16ms (Views: 0.3ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:27:24 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 12ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:31:04 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:2: syntax error, unexpected $undefined
+...esence: true, format: { with: \A[+-]?\d+\]\,\z, message: "In...
+...                               ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:2: syntax error, unexpected ']'
+...e: true, format: { with: \A[+-]?\d+\]\,\z, message: "Integer...
+...                               ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:2: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/decision.rb:2: syntax error, unexpected $undefined
+app/models/decision.rb:2: syntax error, unexpected ']'
+app/models/decision.rb:2: syntax error, unexpected '}', expecting keyword_end
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:31:21 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 9ms (Views: 0.3ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:31:42 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"2]", "decision"=>{"description"=>"2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('2]', 'várias', '2018-08-15 23:31:42', '2018-08-15 23:31:42')[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 25ms (Views: 0.6ms | ActiveRecord: 13.9ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:32:06 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[2]", "decision"=>{"description"=>"[2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 17ms (Views: 0.5ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:32:11 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[2]", "decision"=>{"description"=>"[2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[2]', 'várias', '2018-08-15 23:32:11', '2018-08-15 23:32:11')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:32:17 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:33:17 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 8ms (Views: 0.2ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:34:05 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1A2]", "decision"=>{"description"=>"[1A2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 12ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:34:11 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1 A]", "decision"=>{"description"=>"[1 A]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:34:14 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[A]", "decision"=>{"description"=>"[A]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:35:15 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 6ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:35:33 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1]", "decision"=>{"description"=>"[1]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 8ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:35:50 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1]", "decision"=>{"description"=>"[1]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 10ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:35:55 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1]", "decision"=>{"description"=>"[1]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[1]', 'várias', '2018-08-15 23:35:55', '2018-08-15 23:35:55')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:37:39 +0100
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/decision.rb:4:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:39:03 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1]", "decision"=>{"description"=>"[1]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[1]', 'várias', '2018-08-15 23:39:03', '2018-08-15 23:39:03')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.7ms | ActiveRecord: 27.8ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:39:11 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:40:42 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:40:48 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[2]", "decision"=>{"description"=>"[2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[2]', 'várias', '2018-08-15 23:40:48', '2018-08-15 23:40:48')[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 25ms (Views: 2.1ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:41:02 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[2,]", "decision"=>{"description"=>"[2,]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 11ms (Views: 0.3ms | ActiveRecord: 8.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:41:09 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[,2]", "decision"=>{"description"=>"[,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[,2]', 'várias', '2018-08-15 23:41:09', '2018-08-15 23:41:09')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:41:12 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 7ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:41:29 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:41:37 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 10ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:41:44 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 14ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:47:40 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/models/decision.rb:2: premature end of char-class: /^[0-9,.\]\[*$/):
+  
+app/models/decision.rb:2: premature end of char-class: /^[0-9,.\]\[*$/
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:48:03 +0100
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/decision.rb:2:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:48:15 +0100
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/decision.rb:2:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:48:27 +0100
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/decision.rb:2:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:48:47 +0100
+  
+ArgumentError (The provided regular expression is using multiline anchors (^ or $), which may present a security risk. Did you mean to use \A and \z, or forgot to add the :multiline => true option?):
+  
+app/models/decision.rb:2:in `<class:Decision>'
+app/models/decision.rb:1:in `<top (required)>'
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:49:58 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 9ms (Views: 0.2ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:50:05 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[12]", "decision"=>{"description"=>"[12]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[12]', 'várias', '2018-08-15 23:50:05', '2018-08-15 23:50:05')[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:50:12 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[12]", "decision"=>{"description"=>"[12]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 10ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:50:17 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:50:28 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 11ms (Views: 0.3ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:50:34 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[32]", "decision"=>{"description"=>"[32]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[32]', 'várias', '2018-08-15 23:50:34', '2018-08-15 23:50:34')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:51:05 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[32]", "decision"=>{"description"=>"[32]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 11ms (Views: 0.5ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:51:11 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"a", "decision"=>{"description"=>"a", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 9ms (Views: 1.0ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:52:55 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"a", "decision"=>{"description"=>"a", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 19ms (Views: 0.2ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:53:01 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"1,2", "decision"=>{"description"=>"1,2", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('1,2', 'várias', '2018-08-15 23:53:01', '2018-08-15 23:53:01')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:53:07 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:53:21 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,2]", "decision"=>{"description"=>"[1,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[1,2]', 'várias', '2018-08-15 23:53:21', '2018-08-15 23:53:21')[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:53:26 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1a,2]", "decision"=>{"description"=>"[1a,2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:53:30 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[2]", "decision"=>{"description"=>"[2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[2]', 'várias', '2018-08-15 23:53:30', '2018-08-15 23:53:30')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:53:34 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[2", "decision"=>{"description"=>"[2", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[2', 'várias', '2018-08-15 23:53:34', '2018-08-15 23:53:34')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:53:57 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[2", "decision"=>{"description"=>"[2", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 11ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:54:01 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[2]", "decision"=>{"description"=>"[2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[2]', 'várias', '2018-08-15 23:54:01', '2018-08-15 23:54:01')[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 1.5ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:54:05 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"2]", "decision"=>{"description"=>"2]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:54:09 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"1,22]", "decision"=>{"description"=>"1,22]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:54:14 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"[1,22]", "decision"=>{"description"=>"[1,22]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[1,22]', 'várias', '2018-08-15 23:54:14', '2018-08-15 23:54:14')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 1.0ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/api/v1/decisions/add" for 127.0.0.1 at 2018-08-16 00:54:18 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"várias", "description"=>"]1,22]", "decision"=>{"description"=>"]1,22]", "origin"=>"várias"}}
+Unpermitted parameter: :decision
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
