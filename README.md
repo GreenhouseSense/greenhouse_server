@@ -8,8 +8,8 @@ The greenhouse is equiped with sensors and actuators that allows to control the 
 An android mobile app allows to vizualise readings and actions as well as post actions to be performed in the greenhouse.
 
 ## Platforms
-Ruby on Rails 
-MySQL
-Arduino
+- Ruby on Rails
+- MySQL
+- Arduino
 
 ## Changelog
