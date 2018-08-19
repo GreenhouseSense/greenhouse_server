@@ -29,8 +29,7 @@ class Api::V1::DecisionsController < ApplicationController
   private
    # Never trust parameters from the scary internet, only allow the white list through.
     def decision_params
-      puts "----"
-      puts params
+      
       params.permit(:origin, :description)
     end
 

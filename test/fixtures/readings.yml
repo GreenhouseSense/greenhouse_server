@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  air_humidity: 1.5
+  air_temperature: 1.5
+  soil_moisture: 1.5
+  red_light_intensity: 1.5
+  blue_light_intensity: 1.5
+  green_light_intensity: 1.5
+  outside_light_intensity: 1.5
+  fan_status: false
+  roof_door_position: 1.5
+  front_door_status: false
+  wattering_status: false
+
+two:
+  air_humidity: 1.5
+  air_temperature: 1.5
+  soil_moisture: 1.5
+  red_light_intensity: 1.5
+  blue_light_intensity: 1.5
+  green_light_intensity: 1.5
+  outside_light_intensity: 1.5
+  fan_status: false
+  roof_door_position: 1.5
+  front_door_status: false
+  wattering_status: false
