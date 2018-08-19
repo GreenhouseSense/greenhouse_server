@@ -2786,3 +2786,501 @@ Migrating to CreateReadings (20180819145035)
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-08-19 16:42:45 +0100
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-08-19 16:42:45 +0100
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions/get_months" for 127.0.0.1 at 2018-08-19 16:43:49 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `decisions` WHERE (created_at >= '2018-07-19 15:43:49.529724')[0m
+Completed 204 No Content in 21ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 16:54:04 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `decisions` WHERE (created_at >= '2018-07-19 15:54:14.626765')[0m
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/decisions/get_months/months=1" for 127.0.0.1 at 2018-08-19 16:55:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions/get_months/months=1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions/get_months" for 127.0.0.1 at 2018-08-19 16:55:10 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `decisions` WHERE (created_at >= '2018-07-19 15:55:10.735998')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 16:55:17 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `decisions` WHERE (created_at >= '2018-07-19 15:55:17.616185')[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 16:56:52 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `decisions` WHERE (created_at >= '2018-07-19 15:56:52.998350')[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:01:10 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `decisions` WHERE (created_at >= '2018-07-19 16:01:10.420504')[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:01:47 +0100
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `decisions` WHERE (created_at >= '2018-07-19 16:01:47.810837')[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/decisions/add?origin=nowhere&description=road%20to%20nowhere" for 127.0.0.1 at 2018-08-19 17:02:28 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions/add"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/decisions/add?origin=%22nowhere%22&description=%22road%20to%20nowhere%22" for 127.0.0.1 at 2018-08-19 17:03:15 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"\"nowhere\"", "description"=>"\"road to nowhere\""}
+  [1m[35m (1.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 690ms (Views: 0.2ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/api/v1/decisions/add?origin=%22nowhere%22&description=%22[1,2,3]%22" for 127.0.0.1 at 2018-08-19 17:03:26 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"\"nowhere\"", "description"=>"\"[1,2,3]\""}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 11ms (Views: 0.7ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/api/v1/decisions/add?origin=%22nowhere%22&description=[1,2,3]" for 127.0.0.1 at 2018-08-19 17:03:35 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"\"nowhere\"", "description"=>"[1,2,3]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[1,2,3]', '\"nowhere\"', '2018-08-19 16:03:35', '2018-08-19 16:03:35')[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 22ms (Views: 1.9ms | ActiveRecord: 15.7ms)
+
+
+Started POST "/api/v1/decisions/add?origin=nowhere&description=[1,2,3]" for 127.0.0.1 at 2018-08-19 17:03:42 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"origin"=>"nowhere", "description"=>"[1,2,3]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`) VALUES ('[1,2,3]', 'nowhere', '2018-08-19 16:03:42', '2018-08-19 16:03:42')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:03:49 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `decisions` WHERE (created_at >= '2018-07-19 16:03:49.980757')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:04:05 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[36mDecision Load (0.4ms)[0m  [1m[34mSELECT `decisions`.* FROM `decisions` WHERE (created_at >= '2018-07-19 16:04:05.361947')[0m
+Completed 200 OK in 16ms (Views: 8.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=fds" for 127.0.0.1 at 2018-08-19 17:10:39 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"fds"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `>' for <ActionController::Parameters {"months"=>"fds"} permitted: true>:ActionController::Parameters):
+  
+app/controllers/api/v1/decisions_controller.rb:25:in `get_months'
+Started GET "/api/v1/decisions/get_months?months=fds" for 127.0.0.1 at 2018-08-19 17:10:47 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"fds"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `>' for <ActionController::Parameters {"months"=>"fds"} permitted: true>:ActionController::Parameters):
+  
+app/controllers/api/v1/decisions_controller.rb:25:in `get_months'
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:10:55 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `>' for <ActionController::Parameters {"months"=>"1"} permitted: true>:ActionController::Parameters):
+  
+app/controllers/api/v1/decisions_controller.rb:25:in `get_months'
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:11:24 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `>' for <ActionController::Parameters {"months"=>"1"} permitted: true>:ActionController::Parameters):
+  
+app/controllers/api/v1/decisions_controller.rb:25:in `get_months'
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:11:56 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (comparison of String with 0 failed):
+  
+app/controllers/api/v1/decisions_controller.rb:25:in `>'
+app/controllers/api/v1/decisions_controller.rb:25:in `get_months'
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:11:58 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (comparison of String with 0 failed):
+  
+app/controllers/api/v1/decisions_controller.rb:25:in `>'
+app/controllers/api/v1/decisions_controller.rb:25:in `get_months'
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:12:07 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (comparison of String with 0 failed):
+  
+app/controllers/api/v1/decisions_controller.rb:25:in `>'
+app/controllers/api/v1/decisions_controller.rb:25:in `get_months'
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:12:15 +0100
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (comparison of String with 0 failed):
+  
+app/controllers/api/v1/decisions_controller.rb:25:in `>'
+app/controllers/api/v1/decisions_controller.rb:25:in `get_months'
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:12:44 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (comparison of String with 0 failed):
+  
+app/controllers/api/v1/decisions_controller.rb:25:in `>'
+app/controllers/api/v1/decisions_controller.rb:25:in `get_months'
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:12:47 +0100
+  [1m[35m (1.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[36mDecision Load (0.4ms)[0m  [1m[34mSELECT `decisions`.* FROM `decisions` WHERE (created_at >= '2018-07-19 16:12:57.329098')[0m
+Completed 200 OK in 24ms (Views: 10.5ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:13:13 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (comparison of String with 0 failed):
+  
+app/controllers/api/v1/decisions_controller.rb:26:in `>'
+app/controllers/api/v1/decisions_controller.rb:26:in `get_months'
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:13:35 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[36mDecision Load (0.3ms)[0m  [1m[34mSELECT `decisions`.* FROM `decisions` WHERE (created_at >= '2018-07-19 16:13:35.618554')[0m
+Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=dd" for 127.0.0.1 at 2018-08-19 17:13:47 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"dd"}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=dd" for 127.0.0.1 at 2018-08-19 17:14:31 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"dd"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=3" for 127.0.0.1 at 2018-08-19 17:14:36 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"3"}
+  [1m[36mDecision Load (0.3ms)[0m  [1m[34mSELECT `decisions`.* FROM `decisions` WHERE (created_at >= '2018-07-19 16:14:36.335601')[0m
+Completed 200 OK in 24ms (Views: 18.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/decisions/get_months?months=0" for 127.0.0.1 at 2018-08-19 17:14:39 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"0"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/decisions/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 17:20:33 +0100
+Processing by Api::V1::DecisionsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/decisions/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 17:20:38 +0100
+Processing by Api::V1::DecisionsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `months_decisions' for #<Api::V1::DecisionsController:0x007fa3f4860a70>):
+  
+app/controllers/api/v1/decisions_controller.rb:24:in `get_weeks'
+Started GET "/api/v1/decisions/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 17:20:47 +0100
+Processing by Api::V1::DecisionsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+  [1m[36mDecision Load (0.5ms)[0m  [1m[34mSELECT `decisions`.* FROM `decisions` WHERE (created_at >= '2018-08-12 16:20:48.010764')[0m
+Completed 200 OK in 14ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:23:29 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:24:40 +0100
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:25:24 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:26:56 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:27:07 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:30:29 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:75: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:31:05 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:31:27 +0100
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:31:48 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 17:32:16 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 17:36:22 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:36:39 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/decisions_controller.rb:76: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/decisions/get_months?months=1" for 127.0.0.1 at 2018-08-19 17:36:51 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[36mDecision Load (0.5ms)[0m  [1m[34mSELECT `decisions`.* FROM `decisions` WHERE (created_at >= '2018-07-19 16:36:51.658723')[0m
+Completed 200 OK in 26ms (Views: 11.9ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:37:13 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"years"=>"1"}
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:37:44 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"years"=>"1"}
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `months' for #<Api::V1::DecisionsController:0x007fcaa057f590>):
+  
+app/controllers/api/v1/decisions_controller.rb:61:in `get_years'
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:39:22 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"years"=>"1"}
+  [1m[36mDecision Load (0.3ms)[0m  [1m[34mSELECT `decisions`.* FROM `decisions` WHERE (created_at >= '2019-08-19 16:39:22.488418')[0m
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:39:48 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"years"=>"1"}
+  [1m[36mDecision Load (0.5ms)[0m  [1m[34mSELECT `decisions`.* FROM `decisions` WHERE (created_at >= '2019-08-19 16:39:48.266762')[0m
+Completed 200 OK in 10ms (Views: 1.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/decisions/get_years?years=1" for 127.0.0.1 at 2018-08-19 17:40:16 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"years"=>"1"}
+  [1m[36mDecision Load (0.4ms)[0m  [1m[34mSELECT `decisions`.* FROM `decisions` WHERE (created_at >= '2017-08-19 16:40:16.120849')[0m
+Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 1.6ms)
+
+
