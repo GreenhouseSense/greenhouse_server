@@ -13,3 +13,18 @@ An android mobile app allows to vizualise readings and actions as well as post a
 - Arduino
 
 ## Changelog
+
+## API endpoints
+Prefix Verb URI Pattern                            Controller#Action
+
+POST /api/v1/readings/add(.:format)         api/v1/readings#add
+GET  /api/v1/readings/get_last(.:format)    api/v1/readings#get_last
+GET  /api/v1/readings/get_weeks(.:format)   api/v1/readings#get_weeks
+GET  /api/v1/readings/get_months(.:format)  api/v1/readings#get_months
+GET  /api/v1/readings/get_years(.:format)   api/v1/readings#get_years
+
+GET  /api/v1/decisions/get_last(.:format)   api/v1/decisions#get_last
+GET  /api/v1/decisions/get_weeks(.:format)  api/v1/decisions#get_weeks
+GET  /api/v1/decisions/get_years(.:format)  api/v1/decisions#get_years
+GET  /api/v1/decisions/get_months(.:format) api/v1/decisions#get_months
+POST /api/v1/decisions/add(.:format)        api/v1/decisions#add
