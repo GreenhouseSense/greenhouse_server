@@ -3284,3 +3284,576 @@ Processing by Api::V1::DecisionsController#get_years as */*
 Completed 200 OK in 16ms (Views: 10.3ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/api/v1/readings/get_last" for 127.0.0.1 at 2018-08-19 17:55:27 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::ReadingsController#get_last as */*
+  [1m[36mReading Load (24.6ms)[0m  [1m[34mSELECT  `readings`.* FROM `readings` ORDER BY created_at DESC LIMIT 1[0m
+Completed 200 OK in 33ms (Views: 0.4ms | ActiveRecord: 25.5ms)
+
+
+Started GET "/api/v1/readings/get_last" for 127.0.0.1 at 2018-08-19 17:56:43 +0100
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Api::V1::ReadingsController#get_last as */*
+  [1m[36mReading Load (0.3ms)[0m  [1m[34mSELECT  `readings`.* FROM `readings` ORDER BY created_at DESC LIMIT 1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/readings/get_last" for 127.0.0.1 at 2018-08-19 17:57:24 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:80: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/readings_controller.rb:80: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/v1/readings/get_last" for 127.0.0.1 at 2018-08-19 17:57:25 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:80: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/readings_controller.rb:80: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/v1/readings/get_last" for 127.0.0.1 at 2018-08-19 17:57:41 +0100
+Processing by Api::V1::ReadingsController#get_last as */*
+  [1m[36mReading Load (0.7ms)[0m  [1m[34mSELECT  `readings`.* FROM `readings` ORDER BY created_at DESC LIMIT 1[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `count' for nil:NilClass):
+  
+app/controllers/api/v1/readings_controller.rb:14:in `get_last'
+Started GET "/api/v1/readings/get_last" for 127.0.0.1 at 2018-08-19 17:57:43 +0100
+Processing by Api::V1::ReadingsController#get_last as */*
+  [1m[36mReading Load (0.4ms)[0m  [1m[34mSELECT  `readings`.* FROM `readings` ORDER BY created_at DESC LIMIT 1[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `count' for nil:NilClass):
+  
+app/controllers/api/v1/readings_controller.rb:14:in `get_last'
+Started GET "/api/v1/readings/get_last" for 127.0.0.1 at 2018-08-19 17:58:13 +0100
+Processing by Api::V1::ReadingsController#get_last as */*
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/readings/get_last" for 127.0.0.1 at 2018-08-19 17:58:24 +0100
+Processing by Api::V1::ReadingsController#get_last as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/readings/get_weeks?weeks=d" for 127.0.0.1 at 2018-08-19 18:02:02 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end):
+  
+app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end
+Started GET "/api/v1/readings/get_weeks?weeks=d" for 127.0.0.1 at 2018-08-19 18:02:22 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end):
+  
+app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end
+Started GET "/api/v1/readings/get_weeks?weeks=d" for 127.0.0.1 at 2018-08-19 18:05:49 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end):
+  
+app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:06:00 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end):
+  
+app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:06:19 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end):
+  
+app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:06:27 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end):
+  
+app/controllers/api/v1/readings_controller.rb:18: syntax error, unexpected keyword_else, expecting keyword_end
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:08:33 +0100
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `to_i=' for 0:Fixnum
+Did you mean?  to_i
+               to_int
+               to_c
+               to_d
+               to_r
+               to_f
+               to_s):
+  
+app/controllers/api/v1/readings_controller.rb:33:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:10:31 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `to_i=' for 0:Fixnum
+Did you mean?  to_i
+               to_int
+               to_c
+               to_d
+               to_r
+               to_f
+               to_s):
+  
+app/controllers/api/v1/readings_controller.rb:34:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:10:39 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `to_i=' for 0:Fixnum
+Did you mean?  to_i
+               to_int
+               to_c
+               to_d
+               to_r
+               to_f
+               to_s):
+  
+app/controllers/api/v1/readings_controller.rb:34:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:10:54 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 9ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `to_i=' for 0:Fixnum
+Did you mean?  to_i
+               to_int
+               to_c
+               to_d
+               to_r
+               to_f
+               to_s):
+  
+app/controllers/api/v1/readings_controller.rb:33:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:11:08 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_weeks?weeks=fas" for 127.0.0.1 at 2018-08-19 18:11:14 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"fas"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:11:21 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:11:29 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 8ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `to_i=' for 0:Fixnum
+Did you mean?  to_i
+               to_int
+               to_c
+               to_d
+               to_r
+               to_f
+               to_s):
+  
+app/controllers/api/v1/readings_controller.rb:33:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:11:33 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `to_i=' for 0:Fixnum
+Did you mean?  to_i
+               to_int
+               to_c
+               to_d
+               to_r
+               to_f
+               to_s):
+  
+app/controllers/api/v1/readings_controller.rb:33:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:11:54 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `count=' for #<Class:0x007fd422aa6010>
+Did you mean?  count):
+  
+app/controllers/api/v1/readings_controller.rb:33:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:12:03 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `count=' for #<Class:0x007fd426b13ad0>
+Did you mean?  count):
+  
+app/controllers/api/v1/readings_controller.rb:33:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:12:07 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+Completed 500 Internal Server Error in 9ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `count=' for #<Class:0x007fd426b13ad0>
+Did you mean?  count):
+  
+app/controllers/api/v1/readings_controller.rb:33:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:12:39 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 7ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/readings_controller.rb:34:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:13:38 +0100
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 5ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/readings_controller.rb:34:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:13:56 +0100
+  [1m[35m (2.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+Completed 500 Internal Server Error in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Api::V1::ReadingsController::Readings):
+  
+app/controllers/api/v1/readings_controller.rb:33:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:14:54 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/readings_controller.rb:34:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:15:37 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+Completed 500 Internal Server Error in 11ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `counts' for #<Class:0x007fb50da9ee20>
+Did you mean?  count):
+  
+app/controllers/api/v1/readings_controller.rb:33:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:15:47 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/readings_controller.rb:36:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:15:57 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:16:02 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:16:15 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 204 No Content in 10ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:16:27 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:16:31 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/readings_controller.rb:36:in `get_weeks'
+Started GET "/api/v1/readings/get_weeks?weeks=0" for 127.0.0.1 at 2018-08-19 18:18:00 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"0"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_weeks?weeks=1" for 127.0.0.1 at 2018-08-19 18:18:05 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"weeks"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/readings/get_years?years=1" for 127.0.0.1 at 2018-08-19 18:23:22 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/readings/get_years?years=1" for 127.0.0.1 at 2018-08-19 18:23:40 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/readings/get_years?years=1" for 127.0.0.1 at 2018-08-19 18:23:50 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/readings/get_years?years=1" for 127.0.0.1 at 2018-08-19 18:25:04 +0100
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/readings/get_years?years=0" for 127.0.0.1 at 2018-08-19 18:25:24 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/readings/get_years?years=mm" for 127.0.0.1 at 2018-08-19 18:25:28 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/readings_controller.rb:107: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/readings/get_years?years=mm" for 127.0.0.1 at 2018-08-19 18:26:22 +0100
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:120: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/api/v1/readings_controller.rb:120: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/v1/readings/get_years?years=mm" for 127.0.0.1 at 2018-08-19 18:26:45 +0100
+Processing by Api::V1::ReadingsController#get_years as */*
+  Parameters: {"years"=>"mm"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_years?years=0" for 127.0.0.1 at 2018-08-19 18:26:50 +0100
+Processing by Api::V1::ReadingsController#get_years as */*
+  Parameters: {"years"=>"0"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_years?years=1" for 127.0.0.1 at 2018-08-19 18:26:53 +0100
+Processing by Api::V1::ReadingsController#get_years as */*
+  Parameters: {"years"=>"1"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/readings/get:months?months=1" for 127.0.0.1 at 2018-08-19 18:27:04 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/readings/get:months"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/readings/get_months?months=1" for 127.0.0.1 at 2018-08-19 18:27:09 +0100
+Processing by Api::V1::ReadingsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/readings/get_months?months=0" for 127.0.0.1 at 2018-08-19 18:27:12 +0100
+Processing by Api::V1::ReadingsController#get_months as */*
+  Parameters: {"months"=>"0"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_months?months=as" for 127.0.0.1 at 2018-08-19 18:27:15 +0100
+Processing by Api::V1::ReadingsController#get_months as */*
+  Parameters: {"months"=>"as"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_years?years=as" for 127.0.0.1 at 2018-08-19 18:27:23 +0100
+Processing by Api::V1::ReadingsController#get_years as */*
+  Parameters: {"years"=>"as"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_years?years=0" for 127.0.0.1 at 2018-08-19 18:27:26 +0100
+Processing by Api::V1::ReadingsController#get_years as */*
+  Parameters: {"years"=>"0"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_years?years=1" for 127.0.0.1 at 2018-08-19 18:27:29 +0100
+Processing by Api::V1::ReadingsController#get_years as */*
+  Parameters: {"years"=>"1"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/readings/get_decisions?years=1" for 127.0.0.1 at 2018-08-19 18:30:37 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/readings/get_decisions"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/readings/get_years?years=1" for 127.0.0.1 at 2018-08-19 18:30:48 +0100
+Processing by Api::V1::ReadingsController#get_years as */*
+  Parameters: {"years"=>"1"}
+  [1m[35m (1.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/v1/readings/get_years?years=0" for 127.0.0.1 at 2018-08-19 18:30:51 +0100
+Processing by Api::V1::ReadingsController#get_years as */*
+  Parameters: {"years"=>"0"}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_years?years=a" for 127.0.0.1 at 2018-08-19 18:30:54 +0100
+Processing by Api::V1::ReadingsController#get_years as */*
+  Parameters: {"years"=>"a"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_months?months=a" for 127.0.0.1 at 2018-08-19 18:31:03 +0100
+Processing by Api::V1::ReadingsController#get_months as */*
+  Parameters: {"months"=>"a"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_months?months=0" for 127.0.0.1 at 2018-08-19 18:31:06 +0100
+Processing by Api::V1::ReadingsController#get_months as */*
+  Parameters: {"months"=>"0"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_months?months=1" for 127.0.0.1 at 2018-08-19 18:31:10 +0100
+Processing by Api::V1::ReadingsController#get_months as */*
+  Parameters: {"months"=>"1"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/readings/get_weeks?week=0" for 127.0.0.1 at 2018-08-19 18:31:23 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"week"=>"0"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_weeks?week=a" for 127.0.0.1 at 2018-08-19 18:31:26 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"week"=>"a"}
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/readings/get_weeks?week=1" for 127.0.0.1 at 2018-08-19 18:31:28 +0100
+Processing by Api::V1::ReadingsController#get_weeks as */*
+  Parameters: {"week"=>"1"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
