@@ -1,5 +1,6 @@
 class Api::V1::DecisionsController < ApplicationController
   def add
+    puts "......."
     # POST Method to add a new decision registry on bd
     new_decision = Decision.new(add_decision_params)
     if new_decision.save
@@ -15,7 +16,7 @@ class Api::V1::DecisionsController < ApplicationController
       render json: {status: 'ERROR', message: 'No decisions found', data: 0},status: :ok
     else
       last_decision = Decision.order("created_at").last
-      render json: {status: 'SUCCESS', message: 'Loaded decision', data: last_decision,status: :ok
+      render json: {status: 'SUCCESS', message: 'Loaded decision', data: last_decision},status: :ok
     end
   end
 
@@ -24,8 +25,8 @@ class Api::V1::DecisionsController < ApplicationController
     begin
       weeks = params[:weeks].to_i
     rescue 
-        render json: {status: 'ERROR', message: "Weeks argument must be a integer", data: 0},status: :ok
-        return true
+      render json: {status: 'ERROR', message: "Weeks argument must be a integer", data: 0},status: :ok
+      return true
     end
 
     if weeks <= 0

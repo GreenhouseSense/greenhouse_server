@@ -1,6 +1,36 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
+      post 'actions/add'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      get 'actions/get_all'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      get 'actions/get'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      get 'actions/update'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      get 'actions/destroy'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
       post 'readings/add'
     end
   end
