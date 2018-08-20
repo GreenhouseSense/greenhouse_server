@@ -1,6 +1,5 @@
 class Api::V1::ActionsController < ApplicationController
   def add
-  	puts "...."
   	new_action = Action.new(add_action_params)
   	if new_action.save
       render json: {status: 'SUCCESS', message: 'Added new action', data: new_action}, status: :ok 
@@ -20,14 +19,15 @@ class Api::V1::ActionsController < ApplicationController
   end
 
   def get
-  	 action = Action.find(params[:id])
-     if action > 0
-     	render json: {status: 'SUCCESS', message: 'Returning requested action description', data:action}, status: :ok 
-     	return true
-     else
-     	msg_str = "No actions for id #{params[:id]}"
-    	render json: {status: 'ERROR', message: msg_str, data:0}, status: :ok
-     end
+    puts params[:id]
+  	action = Action.find(params[:id])
+    if action != 0
+      render json: {status: 'SUCCESS', message: 'Returning requested action description', data:action}, status: :ok 
+      return true
+    else
+      msg_str = "No actions for id #{params[:id]}"
+      render json: {status: 'ERROR', message: msg_str, data:0}, status: :ok
+    end
   end
 
   def update

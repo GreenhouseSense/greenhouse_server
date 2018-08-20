@@ -4186,3 +4186,116 @@ Processing by Api::V1::ActionsController#add as */*
 Completed 422 Unprocessable Entity in 678ms (Views: 0.2ms | ActiveRecord: 29.8ms)
 
 
+Started GET "/api/v1/actions/get?id=1" for 127.0.0.1 at 2018-08-20 23:47:30 +0100
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::ActionsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAction Load (0.4ms)[0m  [1m[34mSELECT  `actions`.* FROM `actions` WHERE `actions`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `>' for #<Action:0x007ffe7e9eb2c0>):
+  
+app/controllers/api/v1/actions_controller.rb:23:in `get'
+Started GET "/api/v1/actions/get?id=1" for 127.0.0.1 at 2018-08-20 23:47:47 +0100
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Api::V1::ActionsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAction Load (0.3ms)[0m  [1m[34mSELECT  `actions`.* FROM `actions` WHERE `actions`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `count' for #<Action:0x007ffe8296d588>):
+  
+app/controllers/api/v1/actions_controller.rb:23:in `get'
+Started GET "/api/v1/actions/get?id=1" for 127.0.0.1 at 2018-08-20 23:49:02 +0100
+Processing by Api::V1::ActionsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAction Load (0.4ms)[0m  [1m[34mSELECT  `actions`.* FROM `actions` WHERE `actions`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `count' for #<Action:0x007ffe7eea6800>):
+  
+app/controllers/api/v1/actions_controller.rb:24:in `get'
+Started GET "/api/v1/actions/get?id=1" for 127.0.0.1 at 2018-08-20 23:49:15 +0100
+Processing by Api::V1::ActionsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAction Load (0.4ms)[0m  [1m[34mSELECT  `actions`.* FROM `actions` WHERE `actions`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `count' for #<Action:0x007ffe804e4540>):
+  
+app/controllers/api/v1/actions_controller.rb:23:in `get'
+Started GET "/api/v1/actions/get?id=1" for 127.0.0.1 at 2018-08-20 23:49:26 +0100
+Processing by Api::V1::ActionsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAction Load (0.5ms)[0m  [1m[34mSELECT  `actions`.* FROM `actions` WHERE `actions`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `count' for #<Action:0x007ffe7ecf2a90>):
+  
+app/controllers/api/v1/actions_controller.rb:23:in `get'
+Started GET "/api/v1/actions/get?id=1" for 127.0.0.1 at 2018-08-20 23:49:43 +0100
+Processing by Api::V1::ActionsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAction Load (0.3ms)[0m  [1m[34mSELECT  `actions`.* FROM `actions` WHERE `actions`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `count' for #<Action:0x007ffe82aa23e0>):
+  
+app/controllers/api/v1/actions_controller.rb:24:in `get'
+Started GET "/api/v1/actions/get?id=1" for 127.0.0.1 at 2018-08-20 23:51:07 +0100
+Processing by Api::V1::ActionsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAction Load (0.3ms)[0m  [1m[34mSELECT  `actions`.* FROM `actions` WHERE `actions`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `count' for #<Action:0x007ffe82862058>):
+  
+app/controllers/api/v1/actions_controller.rb:25:in `get'
+Started GET "/api/v1/actions/get?id=1" for 127.0.0.1 at 2018-08-20 23:51:38 +0100
+Processing by Api::V1::ActionsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAction Load (0.4ms)[0m  [1m[34mSELECT  `actions`.* FROM `actions` WHERE `actions`.`id` = 1 LIMIT 1[0m
+Completed 204 No Content in 14ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/actions/get?id=1" for 127.0.0.1 at 2018-08-20 23:51:46 +0100
+Processing by Api::V1::ActionsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAction Load (0.5ms)[0m  [1m[34mSELECT  `actions`.* FROM `actions` WHERE `actions`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (undefined local variable or method `action' for #<Api::V1::ActionsController:0x007ffe7ebb8d50>
+Did you mean?  action_name):
+  
+app/controllers/api/v1/actions_controller.rb:25:in `get'
+Started GET "/api/v1/actions/get?id=1" for 127.0.0.1 at 2018-08-20 23:51:57 +0100
+Processing by Api::V1::ActionsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAction Load (0.4ms)[0m  [1m[34mSELECT  `actions`.* FROM `actions` WHERE `actions`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/actions/get?id=1" for 127.0.0.1 at 2018-08-20 23:52:14 +0100
+Processing by Api::V1::ActionsController#get as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAction Load (0.3ms)[0m  [1m[34mSELECT  `actions`.* FROM `actions` WHERE `actions`.`id` = 1 LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
