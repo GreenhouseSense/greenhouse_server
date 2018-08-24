@@ -1,4 +1,5 @@
 class Api::V1::SessionsController < ApplicationController
+	before_action  :test_user, only: [:logout]
 
 	def login
 		params.permit(:email, :password)
@@ -12,19 +13,17 @@ class Api::V1::SessionsController < ApplicationController
 	end
 
 	def logout
-		params.require('atoken')
-		user = User.where(authentication_token: params[:atoken])
-		if user.empty?
-			render json: {status: 'ERROR', message: 'Token not valid', data: 0}, status: :unprocessable_entity
-			return true
-		else
-			user.update(authentication_token: nil)
-			render json: {status: 'SUCCESS', message: 'User logged out', data: 0},status: :ok
-			return true
-		end
+		#user = User.where(authentication_token: params[:atoken])
+		@user.update(authentication_token: nil)
+		render json: {status: 'SUCCESS', message: 'User logged out', data: 0},status: :ok
 	end
 
 	def new_user
+	end
+
+	protected
+	def test_user
+		super
 	end
 
 end

@@ -5196,3 +5196,181 @@ Processing by Api::V1::SessionsController#logout as */*
 Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
 
 
+Started POST "/api/v1/sessions/logout?atoken=BgLqL-dPEatkofsbDK75" for 127.0.0.1 at 2018-08-24 14:30:55 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"BgLqL-dPEatkofsbDK75"}
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'BgLqL-dPEatkofsbDK75' LIMIT 1[0m
+Completed 422 Unprocessable Entity in 10ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=BgLqL-dPEatkofsbDK75" for 127.0.0.1 at 2018-08-24 14:31:44 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/application_controller.rb:11: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:11: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/api/v1/sessions_controller.rb:1:in `<top (required)>'
+Started POST "/api/v1/sessions/logout?atoken=BgLqL-dPEatkofsbDK75" for 127.0.0.1 at 2018-08-24 14:31:56 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"BgLqL-dPEatkofsbDK75"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'BgLqL-dPEatkofsbDK75' LIMIT 1[0m
+Filter chain halted as :test_user rendered or redirected
+Completed 422 Unprocessable Entity in 14ms (Views: 0.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:32:24 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'XPTcgogiNAakc6bK9yW9'[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'XPTcgogiNAakc6bK9yW9', `updated_at` = '2018-08-24 13:32:24' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 171ms (Views: 0.2ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=XPTcgogiNAakc6bK9yW9" for 127.0.0.1 at 2018-08-24 14:32:29 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"XPTcgogiNAakc6bK9yW9"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'XPTcgogiNAakc6bK9yW9' LIMIT 1[0m
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<Api::V1::SessionsController:0x007f9602d32ee0>):
+  
+app/controllers/api/v1/sessions_controller.rb:16:in `logout'
+Started POST "/api/v1/sessions/logout?atoken=XPTcgogiNAakc6bK9yW9" for 127.0.0.1 at 2018-08-24 14:32:45 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"XPTcgogiNAakc6bK9yW9"}
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'XPTcgogiNAakc6bK9yW9' LIMIT 1[0m
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 1.8ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<Api::V1::SessionsController:0x007f9602cb8c08>):
+  
+app/controllers/api/v1/sessions_controller.rb:16:in `logout'
+Started POST "/api/v1/sessions/logout?atoken=a" for 127.0.0.1 at 2018-08-24 14:34:36 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"a"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'a' LIMIT 1[0m
+Filter chain halted as :test_user rendered or redirected
+Completed 422 Unprocessable Entity in 12ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:34:52 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'fa25ne8vf8ETskDwKdi7'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'fa25ne8vf8ETskDwKdi7', `updated_at` = '2018-08-24 13:34:52' WHERE `users`.`id` = 1[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 178ms (Views: 0.5ms | ActiveRecord: 15.5ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=fa25ne8vf8ETskDwKdi7" for 127.0.0.1 at 2018-08-24 14:34:58 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"fa25ne8vf8ETskDwKdi7"}
+  [1m[36mUser Exists (5.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'fa25ne8vf8ETskDwKdi7' LIMIT 1[0m
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 5.1ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<Api::V1::SessionsController:0x007f9606336f00>):
+  
+app/controllers/application_controller.rb:10:in `test_user'
+app/controllers/api/v1/sessions_controller.rb:26:in `test_user'
+Started POST "/api/v1/sessions/logout?atoken=fa25ne8vf8ETskDwKdi7" for 127.0.0.1 at 2018-08-24 14:35:13 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"fa25ne8vf8ETskDwKdi7"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'fa25ne8vf8ETskDwKdi7' LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'fa25ne8vf8ETskDwKdi7'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = '5Fy-qG2Dgf28Fea-rtz1'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = '5Fy-qG2Dgf28Fea-rtz1', `updated_at` = '2018-08-24 13:35:14' WHERE `users`.`id` = 1[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 39ms (Views: 0.2ms | ActiveRecord: 19.8ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=fa25ne8vf8ETskDwKdi7" for 127.0.0.1 at 2018-08-24 14:35:17 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"fa25ne8vf8ETskDwKdi7"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'fa25ne8vf8ETskDwKdi7' LIMIT 1[0m
+Filter chain halted as :test_user rendered or redirected
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=fa25ne8vf8ETskDwKdi7" for 127.0.0.1 at 2018-08-24 14:35:18 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"fa25ne8vf8ETskDwKdi7"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'fa25ne8vf8ETskDwKdi7' LIMIT 1[0m
+Filter chain halted as :test_user rendered or redirected
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:35:21 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'eK4GEbxSBmuVJAvoS3zQ'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'eK4GEbxSBmuVJAvoS3zQ', `updated_at` = '2018-08-24 13:35:21' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 161ms (Views: 0.2ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:35:51 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'kxn-xYt51zfR9xmLcevT'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'kxn-xYt51zfR9xmLcevT', `updated_at` = '2018-08-24 13:35:51' WHERE `users`.`id` = 1[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 182ms (Views: 0.3ms | ActiveRecord: 14.7ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=xYt51zfR9xmLcevT" for 127.0.0.1 at 2018-08-24 14:35:56 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"xYt51zfR9xmLcevT"}
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'xYt51zfR9xmLcevT' LIMIT 1[0m
+Filter chain halted as :test_user rendered or redirected
+Completed 422 Unprocessable Entity in 10ms (Views: 0.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=kxn-xYt51zfR9xmLcevT" for 127.0.0.1 at 2018-08-24 14:36:09 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"kxn-xYt51zfR9xmLcevT"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'kxn-xYt51zfR9xmLcevT' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'kxn-xYt51zfR9xmLcevT'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'Nv33nTxmyyRMUmz6AUhB'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'Nv33nTxmyyRMUmz6AUhB', `updated_at` = '2018-08-24 13:36:09' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:36:26 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'GicqvRzxVRLdK1y-vB3o'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'GicqvRzxVRLdK1y-vB3o', `updated_at` = '2018-08-24 13:36:26' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 169ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=GicqvRzxVRLdK1y-vB3o" for 127.0.0.1 at 2018-08-24 14:36:33 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"GicqvRzxVRLdK1y-vB3o"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'GicqvRzxVRLdK1y-vB3o' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'GicqvRzxVRLdK1y-vB3o'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'EbmX4pznGAQAKj-Lzata'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'EbmX4pznGAQAKj-Lzata', `updated_at` = '2018-08-24 13:36:33' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.4ms)
+
+
