@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180820214444) do
+ActiveRecord::Schema.define(version: 20180824104252) do
 
   create_table "actions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "description"
@@ -26,19 +26,31 @@ ActiveRecord::Schema.define(version: 20180820214444) do
   end
 
   create_table "readings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.float "air_humidity", limit: 24, null: false
-    t.float "air_temperature", limit: 24, null: false
-    t.float "soil_moisture", limit: 24, null: false
-    t.float "red_light_intensity", limit: 24, null: false
-    t.float "blue_light_intensity", limit: 24, null: false
-    t.float "green_light_intensity", limit: 24, null: false
-    t.float "outside_light_intensity", limit: 24, null: false
-    t.boolean "fan_status", null: false
-    t.float "roof_door_position", limit: 24, null: false
-    t.boolean "front_door_status", null: false
-    t.boolean "wattering_status", null: false
+    t.float "air_humidity", limit: 24
+    t.float "air_temperature", limit: 24
+    t.float "soil_moisture", limit: 24
+    t.float "red_light_intensity", limit: 24
+    t.float "blue_light_intensity", limit: 24
+    t.float "green_light_intensity", limit: 24
+    t.float "outside_light_intensity", limit: 24
+    t.boolean "fan_status"
+    t.float "roof_door_position", limit: 24
+    t.boolean "front_door_status"
+    t.boolean "wattering_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
