@@ -1,5 +1,5 @@
 class Api::V1::SessionsController < ApplicationController
-	before_action  :test_user, only: [:logout]
+	before_action  :test_user_token, only: [:logout]
 
 	def login
 		params.permit(:email, :password)
