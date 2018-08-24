@@ -4583,3 +4583,616 @@ Completed 201 Created in 174ms (Views: 0.2ms | ActiveRecord: 1.6ms)
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6611313979322842965', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('6611313979322842965')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'RUWj1eqk3N6n8vM5oe_o'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `users` SET `updated_at` = '2018-08-24 12:53:11', `authentication_token` = 'RUWj1eqk3N6n8vM5oe_o' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 13:53:37 +0100
+  [1m[35m (1.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 173ms (Views: 0.3ms | ActiveRecord: 1.6ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE `users` SET `users`.`authentication_token` = NULL WHERE `users`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `updated_at` = '2018-08-24 12:56:35', `authentication_token` = 'rtQbYPGURduqy6Gc75Sz' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 13:58:25 +0100
+  [1m[35m (6.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.7ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/controllers/api/v1/sessions_controller.rb:14:in `logout'
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 13:59:02 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.4ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/controllers/api/v1/sessions_controller.rb:15:in `logout'
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 13:59:48 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.4ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/controllers/api/v1/sessions_controller.rb:14:in `logout'
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:00:41 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `param' for #<Api::V1::SessionsController:0x007fe8be8da4d8>
+Did you mean?  params
+               params=):
+  
+app/controllers/api/v1/sessions_controller.rb:13:in `logout'
+Started POST "/api/v1/sessions/logout" for 127.0.0.1 at 2018-08-24 14:01:30 +0100
+  [1m[35m (11.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::SessionsController#logout as */*
+  [1m[36mUser Load (28.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` IS NULL ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 29.7ms)
+
+
+  
+NoMethodError (undefined method `update_column' for nil:NilClass):
+  
+app/controllers/api/v1/sessions_controller.rb:14:in `logout'
+Started POST "/api/v1/sessions/logout?atoken=asd" for 127.0.0.1 at 2018-08-24 14:02:13 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"asd"}
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'asd' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 5.6ms)
+
+
+  
+NoMethodError (undefined method `update_column' for nil:NilClass):
+  
+app/controllers/api/v1/sessions_controller.rb:14:in `logout'
+Started POST "/api/v1/sessions/logout?atoken=asd" for 127.0.0.1 at 2018-08-24 14:02:28 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"asd"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'asd' LIMIT 11[0m
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 6.0ms)
+
+
+  
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'asd' LIMIT 11[0m  [["authentication_token", "asd"], ["LIMIT", 11]]
+NoMethodError (undefined method `update_column' for #<ActiveRecord::Relation []>
+Did you mean?  update_all):
+  
+app/controllers/api/v1/sessions_controller.rb:14:in `logout'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'asd' LIMIT 11[0m  [["authentication_token", "asd"], ["LIMIT", 11]]
+Started POST "/api/v1/sessions/logout?atoken=asd" for 127.0.0.1 at 2018-08-24 14:02:33 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"asd"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'asd' LIMIT 11[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'asd' LIMIT 11[0m  [["authentication_token", "asd"], ["LIMIT", 11]]
+NoMethodError (undefined method `update_column' for #<ActiveRecord::Relation []>
+Did you mean?  update_all):
+  
+app/controllers/api/v1/sessions_controller.rb:14:in `logout'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'asd' LIMIT 11[0m  [["authentication_token", "asd"], ["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:03:06 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m  [["authentication_token", "rtQbYPGURduqy6Gc75Sz"], ["LIMIT", 11]]
+NoMethodError (undefined method `update_column' for #<User::ActiveRecord_Relation:0x007f8b91728e30>
+Did you mean?  update_all):
+  
+app/controllers/api/v1/sessions_controller.rb:14:in `logout'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m  [["authentication_token", "rtQbYPGURduqy6Gc75Sz"], ["LIMIT", 11]]
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:03:24 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `update_column' for #<User::ActiveRecord_Relation:0x007f8b9278a238>
+Did you mean?  update_all):
+  
+app/controllers/api/v1/sessions_controller.rb:15:in `logout'
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:03:56 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = '5Z6Xbscu_K6xh7V4UPAy'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = '5Z6Xbscu_K6xh7V4UPAy', `updated_at` = '2018-08-24 13:03:56' WHERE `users`.`id` = 1[0m
+  [1m[35m (35.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 43.8ms)
+
+
+  
+NoMethodError (undefined method `save' for #<User::ActiveRecord_Relation:0x007f8b9539ada0>):
+  
+app/controllers/api/v1/sessions_controller.rb:16:in `logout'
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:04:06 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:04:12 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 180ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:04:37 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:04:50 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:05:08 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:05:12 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 168ms (Views: 0.1ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:05:14 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 146ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:05:21 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:05:23 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 150ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:05:42 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 167ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:05:45 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 142ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:05:48 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 142ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:05:51 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:07:35 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 163ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:07:40 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `authentication_token' for #<Api::V1::SessionsController:0x007f8b91481a60>):
+  
+app/controllers/api/v1/sessions_controller.rb:14:in `logout'
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:07:55 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `atoken' for #<Api::V1::SessionsController:0x007f8b914c0b98>):
+  
+app/controllers/api/v1/sessions_controller.rb:14:in `logout'
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:08:05 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:09:40 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.9ms)
+
+
+  
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m  [["authentication_token", "rtQbYPGURduqy6Gc75Sz"], ["LIMIT", 11]]
+NoMethodError (undefined method `update_attribute' for #<ActiveRecord::Relation []>
+Did you mean?  update_all):
+  
+app/controllers/api/v1/sessions_controller.rb:16:in `logout'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m  [["authentication_token", "rtQbYPGURduqy6Gc75Sz"], ["LIMIT", 11]]
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:10:49 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `save' for #<ActiveRecord::Relation []>):
+  
+app/controllers/api/v1/sessions_controller.rb:17:in `logout'
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:11:02 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:11:05 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 163ms (Views: 0.1ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:12:08 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.7ms)
+
+
+  
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m  [["authentication_token", "rtQbYPGURduqy6Gc75Sz"], ["LIMIT", 11]]
+NoMethodError (undefined method `authentication_token=' for #<ActiveRecord::Relation []>):
+  
+app/controllers/api/v1/sessions_controller.rb:17:in `logout'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m  [["authentication_token", "rtQbYPGURduqy6Gc75Sz"], ["LIMIT", 11]]
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:12:24 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.6ms)
+
+
+  
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m  [["authentication_token", "rtQbYPGURduqy6Gc75Sz"], ["LIMIT", 11]]
+NoMethodError (undefined method `authentication_token=' for #<ActiveRecord::Relation []>):
+  
+app/controllers/api/v1/sessions_controller.rb:17:in `logout'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz' LIMIT 11[0m  [["authentication_token", "rtQbYPGURduqy6Gc75Sz"], ["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE `users` SET `updated_at` = '2018-08-24 13:12:57', `authentication_token` = '0' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'kXQQRJ6oyF6gGKywW9ky'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `updated_at` = '2018-08-24 13:13:07', `authentication_token` = 'kXQQRJ6oyF6gGKywW9ky' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `updated_at` = '2018-08-24 13:13:21', `authentication_token` = '0' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:13:34 +0100
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `updated_at` = '2018-08-24 13:13:44', `authentication_token` = '111' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:13:46 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 180ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:13:49 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:13:51 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 150ms (Views: 0.2ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=rtQbYPGURduqy6Gc75Sz" for 127.0.0.1 at 2018-08-24 14:14:11 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"rtQbYPGURduqy6Gc75Sz"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'rtQbYPGURduqy6Gc75Sz'[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=111" for 127.0.0.1 at 2018-08-24 14:14:17 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"111"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '111'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = '0', `updated_at` = '2018-08-24 13:14:17' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:14:50 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 201 Created in 146ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'RtbqEyxPJ6EwLmchx4mE'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `updated_at` = '2018-08-24 13:17:38', `authentication_token` = 'RtbqEyxPJ6EwLmchx4mE' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = '6ZtzeKn8bC1sP_C6Yzqs'[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE `users` SET `updated_at` = '2018-08-24 13:17:43', `authentication_token` = '6ZtzeKn8bC1sP_C6Yzqs' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:18:13 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'bdkYEgdn_x_dNjsUWBRz'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'bdkYEgdn_x_dNjsUWBRz', `updated_at` = '2018-08-24 13:18:13' WHERE `users`.`id` = 1[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 176ms (Views: 0.2ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:18:17 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'n66pRhvS5QJmteR3mdKU'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'n66pRhvS5QJmteR3mdKU', `updated_at` = '2018-08-24 13:18:17' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 149ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:18:18 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'nvArVdryxzm-X4L9s7ss'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'nvArVdryxzm-X4L9s7ss', `updated_at` = '2018-08-24 13:18:18' WHERE `users`.`id` = 1[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 153ms (Views: 0.2ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:18:19 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'GTomtU8K77NrF_AKUNr8'[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'GTomtU8K77NrF_AKUNr8', `updated_at` = '2018-08-24 13:18:19' WHERE `users`.`id` = 1[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 161ms (Views: 0.3ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=GTomtU8K77NrF_AKUNr8" for 127.0.0.1 at 2018-08-24 14:18:58 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"GTomtU8K77NrF_AKUNr8"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'GTomtU8K77NrF_AKUNr8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'ryn5yFcGZf-wcpj2uSGr'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'ryn5yFcGZf-wcpj2uSGr', `updated_at` = '2018-08-24 13:18:58' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=a" for 127.0.0.1 at 2018-08-24 14:19:55 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/sessions_controller.rb:21: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+...sage: 'Token not valid', data 0}, status: :unprocessable_ent...
+...                               ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/sessions_controller.rb:27: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/sessions_controller.rb:21: syntax error, unexpected tINTEGER, expecting keyword_do or '{' or '('
+app/controllers/api/v1/sessions_controller.rb:27: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/v1/sessions/logout?atoken=a" for 127.0.0.1 at 2018-08-24 14:20:04 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/sessions_controller.rb:27: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/sessions_controller.rb:27: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/v1/sessions/logout?atoken=a" for 127.0.0.1 at 2018-08-24 14:20:35 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/sessions_controller.rb:27: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/sessions_controller.rb:27: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/v1/sessions/logout?atoken=a" for 127.0.0.1 at 2018-08-24 14:21:06 +0100
+  [1m[35m (4.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/sessions_controller.rb:28: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/sessions_controller.rb:28: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/v1/sessions/logout?atoken=GTomtU8K77NrF_AKUNrf" for 127.0.0.1 at 2018-08-24 14:21:46 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/sessions_controller.rb:28: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/sessions_controller.rb:28: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/v1/sessions/logout?atoken=GTomtU8K77NrF_AKUNrf" for 127.0.0.1 at 2018-08-24 14:23:24 +0100
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/sessions_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/sessions_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/v1/sessions/logout?atoken=GTomtU8K77NrF_AKUNrf" for 127.0.0.1 at 2018-08-24 14:23:43 +0100
+  [1m[35m (1.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"GTomtU8K77NrF_AKUNrf"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'GTomtU8K77NrF_AKUNrf'[0m
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=GTomtU8K77NrF_AKUNr8" for 127.0.0.1 at 2018-08-24 14:24:13 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"GTomtU8K77NrF_AKUNr8"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'GTomtU8K77NrF_AKUNr8'[0m
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=d" for 127.0.0.1 at 2018-08-24 14:24:16 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"d"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'd'[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = '1' LIMIT 11[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '1' LIMIT 1[0m
+Started POST "/api/v1/sessions/logout?atoken=d" for 127.0.0.1 at 2018-08-24 14:25:23 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"d"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'd' LIMIT 1[0m
+Completed 422 Unprocessable Entity in 10ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=GTomtU8K77NrF_AKUNr8" for 127.0.0.1 at 2018-08-24 14:25:34 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"GTomtU8K77NrF_AKUNr8"}
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'GTomtU8K77NrF_AKUNr8' LIMIT 1[0m
+Completed 422 Unprocessable Entity in 7ms (Views: 1.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/v1/sessions/login?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-24 14:25:37 +0100
+Processing by Api::V1::SessionsController#login as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'a@a.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'BgLqL-dPEatkofsbDK75'[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'BgLqL-dPEatkofsbDK75', `updated_at` = '2018-08-24 13:25:37' WHERE `users`.`id` = 1[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 203ms (Views: 0.2ms | ActiveRecord: 17.1ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'BgLqL-dPEatkofsbDK75' LIMIT 11[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`authentication_token` = 'BgLqL-dPEatkofsbDK75' LIMIT 11[0m
+Started POST "/api/v1/sessions/logout?atoken=BgLqL-dPEatkofsbDK75" for 127.0.0.1 at 2018-08-24 14:26:06 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"BgLqL-dPEatkofsbDK75"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'BgLqL-dPEatkofsbDK75' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'BgLqL-dPEatkofsbDK75'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'MJzLaphzGcFoxm6U-zLr'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'MJzLaphzGcFoxm6U-zLr', `updated_at` = '2018-08-24 13:26:06' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 1.6ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=BgLqL-dPEatkofsbDK75" for 127.0.0.1 at 2018-08-24 14:26:09 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"BgLqL-dPEatkofsbDK75"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'BgLqL-dPEatkofsbDK75' LIMIT 1[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
