@@ -92,6 +92,15 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    namespace :v1 do
+      post 'sessions/login'
+      post 'sessions/logout'
+      post 'sessions/new_user'
+    end
+  end
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
