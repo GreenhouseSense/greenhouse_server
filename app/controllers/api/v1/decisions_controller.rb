@@ -1,8 +1,12 @@
 class Api::V1::DecisionsController < ApplicationController
+  before_action  :test_user_token
+  before_action  :test_token_expiration
   def add
     puts "......."
     # POST Method to add a new decision registry on bd
-    new_decision = Decision.new(add_decision_params)
+    #new_decision = Decision.new(add_decision_params)
+    add_decision_params
+    new_decision = Decision.new(origin: add_decision_params[:origin], description: add_decision_params[:description])
     if new_decision.save
       render json: {status: 'SUCCESS', message: 'Added new decision', data: new_decision}, status: :ok 
     else
@@ -111,7 +115,7 @@ class Api::V1::DecisionsController < ApplicationController
   private
    # Never trust parameters from the scary internet, only allow the white list through.
     def add_decision_params      
-      params.permit(:origin, :description)
+      params.permit(:atoken, :origin, :description)
     end
 
 end
