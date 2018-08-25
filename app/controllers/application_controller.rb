@@ -17,16 +17,16 @@ class ApplicationController < ActionController::API
 	 	# puts 'current-1min:'
 	 	# puts Time.now - 1.hour
 	 	# puts 'update: '
-	 	# puts update_date_time
-	 	# if update_date_time < (Time.now - 1.hour)
+	 	# puts update_time
+	 	# if update_time < (Time.now - 1.hour)
 	 	update_date = @user[0]['updated_at'].to_date
 	 	puts 'current-10days:'
 	 	puts Date.current - 10.days
 	 	puts 'update: '
 	 	puts update_date
 	 	if update_date < (Date.current - 10.days)
+			@user.update(authentication_token: nil)
 			render json: {status: 'ERROR', message: 'Expired token', data: 0}, status: :unprocessable_entity
-			redirect_to :controller => 'sessions', :action => 'logout' 
 			return false
 		else
 			return true
