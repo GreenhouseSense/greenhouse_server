@@ -6,7 +6,7 @@ class Api::V1::DecisionsController < ApplicationController
     # POST Method to add a new decision registry on bd
     #new_decision = Decision.new(add_decision_params)
     add_decision_params
-    new_decision = Decision.new(origin: add_decision_params[:origin], description: add_decision_params[:description])
+    new_decision = Decision.new(origin: add_decision_params[:origin], description: add_decision_params[:description], greenhouse_id: add_decision_params[:greenhouse_id])
     if new_decision.save
       render json: {status: 'SUCCESS', message: 'Added new decision', data: new_decision}, status: :ok 
     else
@@ -115,7 +115,7 @@ class Api::V1::DecisionsController < ApplicationController
   private
    # Never trust parameters from the scary internet, only allow the white list through.
     def add_decision_params      
-      params.permit(:atoken, :origin, :description)
+      params.permit(:atoken, :origin, :description, :greenhouse_id)
     end
 
 end

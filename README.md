@@ -28,3 +28,8 @@ GET  /api/v1/decisions/get_weeks(.:format)  api/v1/decisions#get_weeks
 GET  /api/v1/decisions/get_years(.:format)  api/v1/decisions#get_years
 GET  /api/v1/decisions/get_months(.:format) api/v1/decisions#get_months
 POST /api/v1/decisions/add(.:format)        api/v1/decisions#add
+
+
+## Usage
+*Create user:* ```rails c``` >> only
+*Create greenhouse:* ```rails c``` >> only

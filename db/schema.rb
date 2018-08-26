@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180824122912) do
+ActiveRecord::Schema.define(version: 20180825190333) do
 
   create_table "actions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "description"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20180824122912) do
     t.string "origin", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "greenhouse_id"
+    t.index ["greenhouse_id"], name: "index_decisions_on_greenhouse_id"
+  end
+
+  create_table "greenhouses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "location"
+    t.string "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_greenhouses_on_user_id"
   end
 
   create_table "readings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -39,6 +50,8 @@ ActiveRecord::Schema.define(version: 20180824122912) do
     t.boolean "wattering_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "greenhouse_id"
+    t.index ["greenhouse_id"], name: "index_readings_on_greenhouse_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -55,4 +68,6 @@ ActiveRecord::Schema.define(version: 20180824122912) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "decisions", "greenhouses"
+  add_foreign_key "readings", "greenhouses"
 end
