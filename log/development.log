@@ -7122,3 +7122,81 @@ Processing by Api::V1::DecisionsController#add as */*
 Completed 422 Unprocessable Entity in 66ms (Views: 0.3ms | ActiveRecord: 5.4ms)
 
 
+  [1m[35m (33.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (10.9ms)[0m  [1m[32mINSERT INTO `greenhouses` (`location`, `description`, `user_id`, `created_at`, `updated_at`) VALUES ('nowhere', 'estufa de teste', 1, '2018-08-31 23:20:19', '2018-08-31 23:20:19')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGreenhouse Load (6.5ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`user_id` = 1 LIMIT 11[0m
+Started POST "/api/v1/decisions/add?atoken=jiuiWCu3XMRQiYzdei_z&origin=aaa&description=hjbknlm&greenhouse_id=1" for 127.0.0.1 at 2018-09-01 00:23:49 +0100
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"atoken"=>"jiuiWCu3XMRQiYzdei_z", "origin"=>"aaa", "description"=>"hjbknlm", "greenhouse_id"=>"1"}
+  [1m[36mUser Exists (6.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'jiuiWCu3XMRQiYzdei_z' LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'jiuiWCu3XMRQiYzdei_z'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`, `greenhouse_id`) VALUES ('hjbknlm', 'aaa', '2018-08-31 23:23:49', '2018-08-31 23:23:49', 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 112ms (Views: 0.6ms | ActiveRecord: 33.3ms)
+
+
+  [1m[36mDecision Load (0.3ms)[0m  [1m[34mSELECT  `decisions`.* FROM `decisions` WHERE `decisions`.`greenhouse_id` = 1 LIMIT 11[0m
+Started POST "/api/v1/decisions/add?atoken=jiuiWCu3XMRQiYzdei_z&origin=aaa&description=hjbknlm&greenhouse_id=1" for 127.0.0.1 at 2018-09-01 00:24:05 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"atoken"=>"jiuiWCu3XMRQiYzdei_z", "origin"=>"aaa", "description"=>"hjbknlm", "greenhouse_id"=>"1"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'jiuiWCu3XMRQiYzdei_z' LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'jiuiWCu3XMRQiYzdei_z'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `decisions` (`description`, `origin`, `created_at`, `updated_at`, `greenhouse_id`) VALUES ('hjbknlm', 'aaa', '2018-08-31 23:24:05', '2018-08-31 23:24:05', 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 2.1ms)
+
+
+  [1m[36mDecision Load (0.6ms)[0m  [1m[34mSELECT  `decisions`.* FROM `decisions` WHERE `decisions`.`greenhouse_id` = 1 LIMIT 11[0m
+Started POST "/api/v1/decisions/add?atoken=jiuiWCu3XMRQiYzdei_z&origin=aaa&description=hjbknlm" for 127.0.0.1 at 2018-09-01 00:24:28 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"atoken"=>"jiuiWCu3XMRQiYzdei_z", "origin"=>"aaa", "description"=>"hjbknlm"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'jiuiWCu3XMRQiYzdei_z' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'jiuiWCu3XMRQiYzdei_z'[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 745ms (Views: 0.4ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/api/v1/decisions/add?atoken=jiuiWCu3XMR&origin=aaa&description=hjbknlm&greenhouse_id" for 127.0.0.1 at 2018-09-01 00:24:41 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"atoken"=>"jiuiWCu3XMR", "origin"=>"aaa", "description"=>"hjbknlm", "greenhouse_id"=>nil}
+  [1m[36mUser Exists (5.8ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'jiuiWCu3XMR' LIMIT 1[0m
+Filter chain halted as :test_user_token rendered or redirected
+Completed 422 Unprocessable Entity in 14ms (Views: 0.9ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/api/v1/decisions/add?atoken=jiuiWCu3XMRQiYzdei_z&origin=aaa&description=hjbknlm&greenhouse_id" for 127.0.0.1 at 2018-09-01 00:24:46 +0100
+Processing by Api::V1::DecisionsController#add as */*
+  Parameters: {"atoken"=>"jiuiWCu3XMRQiYzdei_z", "origin"=>"aaa", "description"=>"hjbknlm", "greenhouse_id"=>nil}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'jiuiWCu3XMRQiYzdei_z' LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'jiuiWCu3XMRQiYzdei_z'[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 16ms (Views: 0.6ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/api/v1/sessions/logout?atoken=jiuiWCu3XMRQiYzdei_z" for 127.0.0.1 at 2018-09-01 00:25:24 +0100
+Processing by Api::V1::SessionsController#logout as */*
+  Parameters: {"atoken"=>"jiuiWCu3XMRQiYzdei_z"}
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = 'jiuiWCu3XMRQiYzdei_z' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = 'jiuiWCu3XMRQiYzdei_z'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'a379NfbmGCy2trzBS3ey'[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE `users` SET `authentication_token` = 'a379NfbmGCy2trzBS3ey', `updated_at` = '2018-08-31 23:25:24' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 15.4ms)
+
+
+  [1m[36mGreenhouse Load (0.5ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`user_id` = 1 ORDER BY `greenhouses`.`id` ASC LIMIT 1[0m
+  [1m[36mGreenhouse Load (0.6ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`user_id` = 1 ORDER BY `greenhouses`.`id` ASC LIMIT 1[0m
+  [1m[36mDecision Load (0.4ms)[0m  [1m[34mSELECT  `decisions`.* FROM `decisions` WHERE `decisions`.`greenhouse_id` = 1 LIMIT 11[0m
