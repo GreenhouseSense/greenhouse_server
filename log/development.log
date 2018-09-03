@@ -8035,3 +8035,802 @@ Filter chain halted as :test_greenhouse_service_token rendered or redirected
 Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
 
 
+Started POST "/api/v1/greenhouse_service_controller/login?email=service@teste.com&password=[FILTERED]" for 127.0.0.1 at 2018-09-04 00:07:00 +0100
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::GreenhouseServiceControllerController#login as */*
+  Parameters: {"email"=>"service@teste.com", "password"=>"[FILTERED]"}
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT  `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = 'service@teste.com' ORDER BY `greenhouse_services`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[35mSQL (17.5ms)[0m  [1m[33mUPDATE `greenhouse_services` SET `authentication_token` = '1rfR9WixdRpN6sjN9g5D', `updated_at` = '2018-09-03 23:07:00' WHERE `greenhouse_services`.`id` = 1[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 228ms (Views: 0.7ms | ActiveRecord: 23.2ms)
+
+
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50%&blue_light_intensity=20%&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:07:16 +0100
+  
+Rack::QueryParser::InvalidParameterError (invalid %-encoding (50%)):
+  
+rack (2.0.5) lib/rack/query_parser.rb:72:in `rescue in parse_nested_query'
+rack (2.0.5) lib/rack/query_parser.rb:61:in `parse_nested_query'
+rack (2.0.5) lib/rack/request.rb:468:in `parse_query'
+rack (2.0.5) lib/rack/request.rb:319:in `GET'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:348:in `block in GET'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:347:in `GET'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:53:in `parameters'
+actionpack (5.1.6) lib/action_dispatch/http/filter_parameters.rb:41:in `filtered_parameters'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:21:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50%&blue_light_intensity=20%&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false" for 127.0.0.1 at 2018-09-04 00:08:01 +0100
+  
+Rack::QueryParser::InvalidParameterError (invalid %-encoding (50%)):
+  
+rack (2.0.5) lib/rack/query_parser.rb:72:in `rescue in parse_nested_query'
+rack (2.0.5) lib/rack/query_parser.rb:61:in `parse_nested_query'
+rack (2.0.5) lib/rack/request.rb:468:in `parse_query'
+rack (2.0.5) lib/rack/request.rb:319:in `GET'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:348:in `block in GET'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:347:in `GET'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:53:in `parameters'
+actionpack (5.1.6) lib/action_dispatch/http/filter_parameters.rb:41:in `filtered_parameters'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:21:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50%&blue_light_intensity=20%&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:09:30 +0100
+  
+Rack::QueryParser::InvalidParameterError (invalid %-encoding (50%)):
+  
+rack (2.0.5) lib/rack/query_parser.rb:72:in `rescue in parse_nested_query'
+rack (2.0.5) lib/rack/query_parser.rb:61:in `parse_nested_query'
+rack (2.0.5) lib/rack/request.rb:468:in `parse_query'
+rack (2.0.5) lib/rack/request.rb:319:in `GET'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:348:in `block in GET'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:347:in `GET'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:53:in `parameters'
+actionpack (5.1.6) lib/action_dispatch/http/filter_parameters.rb:41:in `filtered_parameters'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:21:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50%&blue_light_intensity=20%&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:09:43 +0100
+  
+Rack::QueryParser::InvalidParameterError (invalid %-encoding (50%)):
+  
+rack (2.0.5) lib/rack/query_parser.rb:72:in `rescue in parse_nested_query'
+rack (2.0.5) lib/rack/query_parser.rb:61:in `parse_nested_query'
+rack (2.0.5) lib/rack/request.rb:468:in `parse_query'
+rack (2.0.5) lib/rack/request.rb:319:in `GET'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:348:in `block in GET'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.1.6) lib/action_dispatch/http/request.rb:347:in `GET'
+actionpack (5.1.6) lib/action_dispatch/http/parameters.rb:53:in `parameters'
+actionpack (5.1.6) lib/action_dispatch/http/filter_parameters.rb:41:in `filtered_parameters'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:21:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:10:30 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.4ms)[0m  [1m[34mSELECT  `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 11[0m
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.8ms)
+
+
+  
+  [1m[36mCACHE GreenhouseService Load (0.0ms)[0m  [1m[34mSELECT  `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 11[0m  [["authentication_token", "1rfR9WixdRpN6sjN9g5D"], ["LIMIT", 11]]
+NoMethodError (undefined method `test_greenhouse_service_token_expiration' for #<Api::V1::ReadingsController:0x007fc6d8bc9700>
+Did you mean?  test_greenhouse_service_token
+               test_gservice_token_expiration):
+  
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[36mCACHE GreenhouseService Load (0.0ms)[0m  [1m[34mSELECT  `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 11[0m  [["authentication_token", "1rfR9WixdRpN6sjN9g5D"], ["LIMIT", 11]]
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:11:18 +0100
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.5ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 5.9ms)
+
+
+  
+NoMethodError (undefined method `greenhouse_id' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2b262a90>):
+  
+app/controllers/api/v1/readings_controller.rb:6:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:11:43 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2b7a49b8>):
+  
+app/controllers/api/v1/readings_controller.rb:6:in `add'
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT  `greenhouse_services`.* FROM `greenhouse_services` ORDER BY `greenhouse_services`.`id` ASC LIMIT 1[0m
+  [1m[36mGreenhouse Load (24.8ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:13:15 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2b5b49c8>):
+  
+app/controllers/api/v1/readings_controller.rb:7:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:13:44 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.4ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.0ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2c433ee0>):
+  
+app/controllers/api/v1/readings_controller.rb:7:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:14:18 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2ba0d588>):
+  
+app/controllers/api/v1/readings_controller.rb:7:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:15:00 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.6ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2c420a98>):
+  
+app/controllers/api/v1/readings_controller.rb:7:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:15:28 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `greenhouse_id' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2ae21d78>):
+  
+app/controllers/api/v1/readings_controller.rb:7:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:15:38 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2ad86670>):
+  
+app/controllers/api/v1/readings_controller.rb:9:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:16:21 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.2ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.5ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 3.1ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2b6dc238>):
+  
+app/controllers/api/v1/readings_controller.rb:9:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:17:05 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2c2ea8b8>):
+  
+app/controllers/api/v1/readings_controller.rb:9:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:17:26 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.2ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2b626fa0>):
+  
+app/controllers/api/v1/readings_controller.rb:7:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:17:33 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `id' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2ab76740>
+Did you mean?  ids):
+  
+app/controllers/api/v1/readings_controller.rb:7:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:17:42 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 3.5ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2b5cc9d8>):
+  
+app/controllers/api/v1/readings_controller.rb:9:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:17:55 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 2.7ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2b869510>):
+  
+app/controllers/api/v1/readings_controller.rb:9:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:18:09 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.7ms)
+
+
+  
+NoMethodError (undefined method `greenhouse' for #<GreenhouseService::ActiveRecord_Relation:0x007fbf2acdf1b8>):
+  
+app/controllers/api/v1/readings_controller.rb:9:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:18:20 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 3.3ms)
+
+
+  
+NameError (undefined local variable or method `add_decision_params' for #<Api::V1::ReadingsController:0x007fbf2b67f4c0>
+Did you mean?  add_reading_params):
+  
+app/controllers/api/v1/readings_controller.rb:10:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:18:50 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.4ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 5.1ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'air_humidity' for Decision.):
+  
+app/controllers/api/v1/readings_controller.rb:9:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:19:44 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.0, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-03 23:19:44', '2018-09-03 23:19:44', 1)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 113ms (Views: 0.8ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:22:59 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:22: syntax error, unexpected ':', expecting ')'
+...', data: new_reading (:except :greenhouse_id)}, status: :ok 
+...                               ^):
+  
+app/controllers/api/v1/readings_controller.rb:22: syntax error, unexpected ':', expecting ')'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:23:10 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.0, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-03 23:23:10', '2018-09-03 23:23:10', 1)[0m
+  [1m[35m (20.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 33.4ms)
+
+
+  
+NoMethodError (undefined method `new_reading' for #<Api::V1::ReadingsController:0x007fbf2b383a78>):
+  
+app/controllers/api/v1/readings_controller.rb:22:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:23:29 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.4ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.0, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-03 23:23:29', '2018-09-03 23:23:29', 1)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 72ms (Views: 0.2ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:23:41 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:22: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+...ing', data: new_reading except: :greenhouse_id}, status: :ok 
+...                               ^):
+  
+app/controllers/api/v1/readings_controller.rb:22: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:23:59 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.5ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.0, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-03 23:23:59', '2018-09-03 23:23:59', 1)[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 99ms (Views: 0.6ms | ActiveRecord: 18.9ms)
+
+
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:24:17 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.2ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.4ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.0, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-03 23:24:17', '2018-09-03 23:24:17', 1)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 10.6ms)
+
+
+  
+NoMethodError (undefined method `except' for #<Reading:0x007fbf2ae23088>
+Did you mean?  exec):
+  
+app/controllers/api/v1/readings_controller.rb:22:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:27:08 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.5ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.0, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-03 23:27:08', '2018-09-03 23:27:08', 1)[0m
+  [1m[35m (21.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 110ms (Views: 0.9ms | ActiveRecord: 33.2ms)
+
+
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:27:32 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.4ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.0, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-03 23:27:32', '2018-09-03 23:27:32', 1)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 5.9ms)
+
+
+  
+NoMethodError (undefined method `except' for #<Reading:0x007fbf2c3c9630>
+Did you mean?  exec):
+  
+app/controllers/api/v1/readings_controller.rb:22:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:27:47 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.4ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.0, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-03 23:27:47', '2018-09-03 23:27:47', 1)[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 17.0ms)
+
+
+  
+NoMethodError (undefined method `ignore' for #<Reading:0x007fbf2acccd38>):
+  
+app/controllers/api/v1/readings_controller.rb:22:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:28:34 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.0, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-03 23:28:34', '2018-09-03 23:28:34', 1)[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 18.2ms)
+
+
+  
+NoMethodError (undefined method `only' for #<Reading:0x007fbf2b61f890>):
+  
+app/controllers/api/v1/readings_controller.rb:22:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:28:51 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:22: syntax error, unexpected '(', expecting =>
+...ding', data: new_reading,:only(:greenhouse_id)}, status: :ok 
+...                               ^):
+  
+app/controllers/api/v1/readings_controller.rb:22: syntax error, unexpected '(', expecting =>
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:29:06 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.4ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.0, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-03 23:29:06', '2018-09-03 23:29:06', 1)[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 96ms (Views: 0.8ms | ActiveRecord: 18.1ms)
+
+
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:31:43 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.0, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-03 23:31:43', '2018-09-03 23:31:43', 1)[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 84ms (Views: 0.4ms | ActiveRecord: 30.8ms)
+
+
+Started GET "/api/v1/readings/get_last?atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:35:16 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:33: syntax error, unexpected '=', expecting ')'
+...Reading.where('greenhouse_id' = @gserv[0].greenhouse_id).ord...
+...                               ^
+/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:33: syntax error, unexpected ')', expecting keyword_end
+..._id' = @gserv[0].greenhouse_id).order("created_at")
+...                               ^):
+  
+app/controllers/api/v1/readings_controller.rb:33: syntax error, unexpected '=', expecting ')'
+app/controllers/api/v1/readings_controller.rb:33: syntax error, unexpected ')', expecting keyword_end
+Started GET "/api/v1/readings/get_last?atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:36:07 +0100
+Processing by Api::V1::ReadingsController#get_last as */*
+  Parameters: {"atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 15.0ms)
+
+
+  
+NoMethodError (undefined method `to_i=' for 11:Fixnum
+Did you mean?  to_i
+               to_int
+               to_c
+               to_d
+               to_r
+               to_f
+               to_s):
+  
+app/controllers/api/v1/readings_controller.rb:30:in `get_last'
+Started GET "/api/v1/readings/get_last?atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:36:48 +0100
+Processing by Api::V1::ReadingsController#get_last as */*
+  Parameters: {"atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `greenhouse_id' for #<GreenhouseService:0x007fbf2b1e3808>
+Did you mean?  greenhouse
+               greenhouse=):
+  
+app/controllers/api/v1/readings_controller.rb:33:in `get_last'
+Started GET "/api/v1/readings/get_last?atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:37:09 +0100
+Processing by Api::V1::ReadingsController#get_last as */*
+  Parameters: {"atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[36mReading Load (0.6ms)[0m  [1m[34mSELECT `readings`.* FROM `readings` WHERE (greenhouse_id = 1) ORDER BY created_at[0m
+Completed 200 OK in 63ms (Views: 1.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/v1/readings/get_last?atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:37:23 +0100
+Processing by Api::V1::ReadingsController#get_last as */*
+  Parameters: {"atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[36mReading Load (0.6ms)[0m  [1m[34mSELECT  `readings`.* FROM `readings` WHERE (greenhouse_id = 1) ORDER BY created_at LIMIT 1[0m
+Completed 200 OK in 70ms (Views: 0.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/v1/readings/get_last?atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 00:37:41 +0100
+Processing by Api::V1::ReadingsController#get_last as */*
+  Parameters: {"atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings`[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[36mReading Load (0.5ms)[0m  [1m[34mSELECT  `readings`.* FROM `readings` WHERE (greenhouse_id = 1) ORDER BY created_at DESC LIMIT 1[0m
+Completed 200 OK in 67ms (Views: 0.4ms | ActiveRecord: 4.5ms)
+
+

@@ -1,22 +1,25 @@
 class Api::V1::ReadingsController < ApplicationController
-  # before_action  :test_user_token
-  # before_action  :test_token_expiration
+  before_action  :test_greenhouse_service_token
+  before_action  :test_greenhouse_service_token_expiration
   def add
     add_reading_params
-    new_reading = Decision.new(greenhouse_id: add_decision_params[:greenhouse_id],
-                              air_humidity: add_decision_params[:air_humidity], 
-                              air_temperature: add_decision_params[:air_temperature], 
-                              soil_moisture: add_decision_params[:soil_moisture], 
-                              red_light_intensity: add_decision_params[:red_light_intensity], 
-                              blue_light_intensity: add_decision_params[:blue_light_intensity], 
-                              green_light_intensity: add_decision_params[:green_light_intensity], 
-                              outside_light_intensity: add_decision_params[:outside_light_intensity], 
-                              fan_status: add_decision_params[:fan_status], 
-                              roof_door_position: add_decision_params[:roof_door_position], 
-                              front_door_status: add_decision_params[:front_door_status], 
-                              wattering_status: add_decision_params[:wattering_status])
+    puts "**************"
+    puts @gserv[0].greenhouse.id
+    puts "**************"
+    new_reading = Reading.new(greenhouse_id: @gserv[0].greenhouse.id,
+                              air_humidity: add_reading_params[:air_humidity], 
+                              air_temperature: add_reading_params[:air_temperature], 
+                              soil_moisture: add_reading_params[:soil_moisture], 
+                              red_light_intensity: add_reading_params[:red_light_intensity], 
+                              blue_light_intensity: add_reading_params[:blue_light_intensity], 
+                              green_light_intensity: add_reading_params[:green_light_intensity], 
+                              outside_light_intensity: add_reading_params[:outside_light_intensity], 
+                              fan_status: add_reading_params[:fan_status], 
+                              roof_door_position: add_reading_params[:roof_door_position], 
+                              front_door_status: add_reading_params[:front_door_status], 
+                              wattering_status: add_reading_params[:wattering_status])
     if new_reading.save
-      render json: {status: 'SUCCESS', message: 'Added new reading', data: new_reading}, status: :ok 
+      render json: {status: 'SUCCESS', message: 'Added new reading', data: new_reading.as_json(:except => [:greenhouse_id])}, status: :ok 
     else
       render json: {status: 'ERROR', message: 'Reading not added', data: new_reading.errors}, status: :unprocessable_entity
     end
@@ -24,11 +27,11 @@ class Api::V1::ReadingsController < ApplicationController
 
   def get_last
     # GET Method to retreive the last readings added
-    if Reading.count.to_i = 0
+    if Reading.count.to_i == 0
       render json: {status: 'ERROR', message: 'No readings found', data: 0},status: :ok
     else
-      last_reading = Reading.order("created_at").last
-      render json: {status: 'SUCCESS', message: 'Loaded readings', data: last_reading},status: :ok
+      last_reading = Reading.where('greenhouse_id = ?',@gserv[0].greenhouse.id).order("created_at").last
+      render json: {status: 'SUCCESS', message: 'Loaded readings', data: last_reading.as_json(:except => [:greenhouse_id])},status: :ok
     end
   end
 
@@ -58,7 +61,7 @@ class Api::V1::ReadingsController < ApplicationController
     else
       msg_str = "Loaded readings from last #{weeks} weeks"
     end
-    render json: {status: 'SUCCESS', message: msg_str, data: weeks_readings},status: :ok
+    render json: {status: 'SUCCESS', message: msg_str, data: weeks_readings.as_json(:except => [:greenhouse_id])},status: :ok
     return true
   end
 
@@ -87,7 +90,7 @@ class Api::V1::ReadingsController < ApplicationController
       else
         msg_str = "Loaded readings from last #{months} months"
       end
-      render json: {status: 'SUCCESS', message: msg_str, data: months_readings},status: :ok
+      render json: {status: 'SUCCESS', message: msg_str, data: months_readings.as_json(:except => [:greenhouse_id])},status: :ok
     return true
   end
 
@@ -116,7 +119,7 @@ class Api::V1::ReadingsController < ApplicationController
     else
       msg_str = "Loaded readings from last #{years} years"
     end
-    render json: {status: 'SUCCESS', message: msg_str, data: years_readings},status: :ok
+    render json: {status: 'SUCCESS', message: msg_str, data: years_readings.as_json(:except => [:greenhouse_id])},status: :ok
     return true
   end
 
@@ -128,7 +131,7 @@ class Api::V1::ReadingsController < ApplicationController
                     :red_light_intensity, :blue_light_intensity, 
                     :green_light_intensity, :outside_light_intensity, 
                     :fan_status, :roof_door_position, :front_door_status, 
-                    :wattering_status, :atoken, :greenhouse_id)
+                    :wattering_status, :atoken)
     end
 
 end
