@@ -1,6 +1,6 @@
 class Api::V1::ReadingsController < ApplicationController
-  before_action  :test_user_token
-  before_action  :test_token_expiration
+  # before_action  :test_user_token
+  # before_action  :test_token_expiration
   def add
     add_reading_params
     new_reading = Decision.new(greenhouse_id: add_decision_params[:greenhouse_id],

@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
   #devise_for :greenhouse_services
   #devise_for :users
+
+  namespace :api do
+    namespace :v1 do
+      post 'greenhouse_service_controller/login'
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      get 'greenhouse_service_controller/logout'
+    end
+  end
   namespace :api do
     namespace :v1 do
       post 'actions/add'

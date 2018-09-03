@@ -1,6 +1,6 @@
 class Api::V1::DecisionsController < ApplicationController
-  before_action  :test_user_token
-  before_action  :test_token_expiration
+  # before_action  :test_user_token
+  # before_action  :test_token_expiration
   def add
     puts "......."
     # POST Method to add a new decision registry on bd
