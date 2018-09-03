@@ -49,6 +49,9 @@ An android mobile app allows to vizualise readings and actions as well as post a
 |POST | /api/v1/sessions/logout(.:format) | api/v1/sessions#logout |
 |POST | /api/v1/sessions/new_user(.:format) | api/v1/sessions#new_user |
 
+## Databse Schema
+![Schema](/db/schema.png)
+
 
 ## Usage
 *Create user:* 
