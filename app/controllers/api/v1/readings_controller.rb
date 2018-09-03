@@ -27,7 +27,7 @@ class Api::V1::ReadingsController < ApplicationController
 
   def get_last
     # GET Method to retreive the last readings added
-    if Reading.count.to_i == 0
+    if Reading.count == 0
       render json: {status: 'ERROR', message: 'No readings found', data: 0},status: :ok
     else
       last_reading = Reading.where('greenhouse_id = ?',@gserv[0].greenhouse.id).order("created_at").last
@@ -40,8 +40,8 @@ class Api::V1::ReadingsController < ApplicationController
     begin
       weeks = params[:weeks].to_i
     rescue 
-        render json: {status: 'ERROR', message: "Weeks argument must be a integer", data: 0},status: :ok
-        return true
+      render json: {status: 'ERROR', message: "Weeks argument must be a integer", data: 0},status: :ok
+      return true
     end
 
     if weeks <= 0
@@ -55,7 +55,7 @@ class Api::V1::ReadingsController < ApplicationController
     end
       
     week_days = weeks * 7
-    weeks_readings = Reading.where('created_at >= ?', Time.zone.now - week_days.days) 
+    weeks_readings = Reading.where('greenhouse_id = ?',@gserv[0].greenhouse.id).where('created_at >= ?', Time.zone.now - week_days.days)
     if weeks_readings == 0
       msg_str = "No records for last #{weeks} weeks"      
     else
@@ -84,7 +84,7 @@ class Api::V1::ReadingsController < ApplicationController
       return true
     end
 
-    months_readings = Reading.where('created_at >= ?', Time.zone.now - months.months) 
+    months_readings = Reading.where('greenhouse_id = ?',@gserv[0].greenhouse.id).where('created_at >= ?', Time.zone.now - months.months) 
     if months_readings == 0
         msg_str = "No readings for last #{months} months"      
       else
@@ -113,7 +113,7 @@ class Api::V1::ReadingsController < ApplicationController
       return true
     end
 
-    years_readings = Reading.where('created_at >= ?', Time.zone.now - years.years) 
+    years_readings = Reading.where('greenhouse_id = ?',@gserv[0].greenhouse.id).where('created_at >= ?', Time.zone.now - years.years) 
     if years_readings == 0
       msg_str = "No readings for last #{years} years"      
     else
