@@ -41,7 +41,7 @@ api_v1_sessions_new_user POST /api/v1/sessions/new_user(.:format)    api/v1/sess
 ```
 rails c
 new_user = User.create(email:"teste@teste.com", password:"testeteste",password_confirmation:"testeteste")
-new_greenhouse_service = GreenhouseService.create(email:"service@email.com",password: "service", password_confirmation: "service")
+new_greenouse_service  = GreenhouseService.create(email:"service@teste.com", password:"testeteste",password_confirmation:"testeteste")
 new_greenhouse = Greenhouse.create(location:"nowhere", description:"estufa de teste", user_id:u.id)
 ```
 *Create greenhouse:* ```rails c``` >> only
