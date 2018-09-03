@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180825190333) do
+ActiveRecord::Schema.define(version: 20180903084059) do
 
   create_table "actions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "description"
@@ -27,12 +27,28 @@ ActiveRecord::Schema.define(version: 20180825190333) do
     t.index ["greenhouse_id"], name: "index_decisions_on_greenhouse_id"
   end
 
+  create_table "greenhouse_services", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "authentication_token", limit: 30
+    t.index ["authentication_token"], name: "index_greenhouse_services_on_authentication_token", unique: true
+    t.index ["email"], name: "index_greenhouse_services_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_greenhouse_services_on_reset_password_token", unique: true
+  end
+
   create_table "greenhouses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "location"
     t.string "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "greenhouse_service_id"
+    t.index ["greenhouse_service_id"], name: "index_greenhouses_on_greenhouse_service_id"
     t.index ["user_id"], name: "index_greenhouses_on_user_id"
   end
 
@@ -69,5 +85,6 @@ ActiveRecord::Schema.define(version: 20180825190333) do
   end
 
   add_foreign_key "decisions", "greenhouses"
+  add_foreign_key "greenhouses", "greenhouse_services"
   add_foreign_key "readings", "greenhouses"
 end

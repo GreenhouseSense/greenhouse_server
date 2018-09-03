@@ -7200,3 +7200,716 @@ Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 15.4ms)
   [1m[36mGreenhouse Load (0.5ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`user_id` = 1 ORDER BY `greenhouses`.`id` ASC LIMIT 1[0m
   [1m[36mGreenhouse Load (0.6ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`user_id` = 1 ORDER BY `greenhouses`.`id` ASC LIMIT 1[0m
   [1m[36mDecision Load (0.4ms)[0m  [1m[34mSELECT  `decisions`.* FROM `decisions` WHERE `decisions`.`greenhouse_id` = 1 LIMIT 11[0m
+  [1m[35m (38.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('6611313979322842965', 0)[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to DeviseCreateGreenhouseServices (20180902224554)
+  [1m[35m (42.2ms)[0m  [1m[35mCREATE TABLE `greenhouse_services` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_greenhouse_services_on_email`  ON `greenhouse_services` (`email`) [0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_greenhouse_services_on_reset_password_token`  ON `greenhouse_services` (`reset_password_token`) [0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180902224554')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAuthenticationTokenToGreenhouseService (20180903082636)
+  [1m[35m (18.4ms)[0m  [1m[35mALTER TABLE `greenhouse_services` ADD `authentication_token` varchar(30)[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_greenhouse_services_on_authentication_token`  ON `greenhouse_services` (`authentication_token`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180903082636')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (25.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6611313979322842965')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6611313979322842965', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddGreenhouseToGreenhouseServices (20180903084059)
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE `greenhouse_services` ADD `greenhouse_id` reference[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('6611313979322842965')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('6611313979322842965', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddGreenhouseToGreenhouseServices (20180903084059)
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE `greenhouse_services` ADD `greenhouse` reference[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('6611313979322842965')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6611313979322842965', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddGreenhouseToGreenhouseServices (20180903084059)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('6611313979322842965')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6611313979322842965', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddGreenhouseToGreenhouseServices (20180903084059)
+  [1m[35m (23.9ms)[0m  [1m[35mALTER TABLE `greenhouse_services` ADD `greenhouse_id` bigint[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE  INDEX `index_greenhouse_services_on_greenhouse_id`  ON `greenhouse_services` (`greenhouse_id`) [0m
+  [1m[35m (40.2ms)[0m  [1m[35mALTER TABLE `greenhouse_services` ADD CONSTRAINT `fk_rails_8260cdeedf`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180903084059')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('6611313979322842965')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6611313979322842965', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddGreenhouseServiceToGreenhouse (20180903090012)
+  [1m[35m (168.1ms)[0m  [1m[35mALTER TABLE `greenhouses` ADD `greenhouse_service_id` bigint[0m
+  [1m[35m (20.3ms)[0m  [1m[35mCREATE  INDEX `index_greenhouses_on_greenhouse_service_id`  ON `greenhouses` (`greenhouse_service_id`) [0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180903090012')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('6611313979322842965')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (60.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `greenhouse_server_development`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS `greenhouse_server_test`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6611313979322842965', 0)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateDecisions (20180801224702)
+  [1m[35m (26.3ms)[0m  [1m[35mCREATE TABLE `decisions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255) NOT NULL, `origin` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180801224702')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReadings (20180819145035)
+  [1m[35m (28.2ms)[0m  [1m[35mCREATE TABLE `readings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `air_humidity` float, `air_temperature` float, `soil_moisture` float, `red_light_intensity` float, `blue_light_intensity` float, `green_light_intensity` float, `outside_light_intensity` float, `fan_status` tinyint(1), `roof_door_position` float, `front_door_status` tinyint(1), `wattering_status` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180819145035')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActions (20180820214444)
+  [1m[35m (28.8ms)[0m  [1m[35mCREATE TABLE `actions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180820214444')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20180824104252)
+  [1m[35m (26.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180824104252')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAuthenticationTokenToUsers (20180824122912)
+  [1m[35m (29.2ms)[0m  [1m[35mALTER TABLE `users` ADD `authentication_token` varchar(30)[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_authentication_token`  ON `users` (`authentication_token`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180824122912')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGreenhouses (20180825164905)
+  [1m[35m (25.4ms)[0m  [1m[35mCREATE TABLE `greenhouses` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `location` varchar(255), `description` varchar(255), `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_greenhouses_on_user_id`  (`user_id`)) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180825164905')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddGreenhouseToDecisions (20180825190107)
+  [1m[35m (32.9ms)[0m  [1m[35mALTER TABLE `decisions` ADD `greenhouse_id` bigint[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE  INDEX `index_decisions_on_greenhouse_id`  ON `decisions` (`greenhouse_id`) [0m
+  [1m[35m (13.7ms)[0m  [1m[35mALTER TABLE `decisions` ADD CONSTRAINT `fk_rails_dc6576be49`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180825190107')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddGreenhouseToReadings (20180825190333)
+  [1m[35m (34.5ms)[0m  [1m[35mALTER TABLE `readings` ADD `greenhouse_id` bigint[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE  INDEX `index_readings_on_greenhouse_id`  ON `readings` (`greenhouse_id`) [0m
+  [1m[35m (20.5ms)[0m  [1m[35mALTER TABLE `readings` ADD CONSTRAINT `fk_rails_e14a1d2f06`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180825190333')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateGreenhouseServices (20180902224554)
+  [1m[35m (27.3ms)[0m  [1m[35mCREATE TABLE `greenhouse_services` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_greenhouse_services_on_email`  ON `greenhouse_services` (`email`) [0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_greenhouse_services_on_reset_password_token`  ON `greenhouse_services` (`reset_password_token`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180902224554')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAuthenticationTokenToGreenhouseService (20180903082636)
+  [1m[35m (15.1ms)[0m  [1m[35mALTER TABLE `greenhouse_services` ADD `authentication_token` varchar(30)[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_greenhouse_services_on_authentication_token`  ON `greenhouse_services` (`authentication_token`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180903082636')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddGreenhouseToGreenhouseServices (20180903084059)
+  [1m[35m (13.4ms)[0m  [1m[35mALTER TABLE `greenhouses` ADD `greenhouse_service_id` bigint[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE  INDEX `index_greenhouses_on_greenhouse_service_id`  ON `greenhouses` (`greenhouse_service_id`) [0m
+  [1m[35m (16.9ms)[0m  [1m[35mALTER TABLE `greenhouses` ADD CONSTRAINT `fk_rails_b9d2c7e3b9`
+FOREIGN KEY (`greenhouse_service_id`)
+  REFERENCES `greenhouse_services` (`id`)
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180903084059')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-09-03 09:07:32', '2018-09-03 09:07:32')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('6611313979322842965')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (26.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'email@email.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'service@email.com' LIMIT 1[0m
+  [1m[35m (17.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = 'uwihY6-2x4Di1e92sojB'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `greenhouse_services` (`email`, `encrypted_password`, `created_at`, `updated_at`, `authentication_token`) VALUES ('service@email.com', '$2a$11$aSiQhHeFtxNpoW8i24MPd.mZpW1H0VkFfwIl1aPO8HavwPkbLRcHq', '2018-09-03 09:15:36', '2018-09-03 09:15:36', 'uwihY6-2x4Di1e92sojB')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT  `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'email@email.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (50.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS `greenhouse_server_development`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `greenhouse_server_test`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'email@email.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `greenhouse_server_development`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `greenhouse_server_test`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE DATABASE `greenhouse_server_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE DATABASE `greenhouse_server_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `actions` CASCADE[0m
+  [1m[35m (25.2ms)[0m  [1m[35mCREATE TABLE `actions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS `decisions` CASCADE[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE `decisions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255) NOT NULL, `origin` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_decisions_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouse_services` CASCADE[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE `greenhouse_services` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_greenhouse_services_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_greenhouse_services_on_email`  (`email`), UNIQUE INDEX `index_greenhouse_services_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouses` CASCADE[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE `greenhouses` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `location` varchar(255), `description` varchar(255), `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_service_id` bigint,  INDEX `index_greenhouses_on_greenhouse_service_id`  (`greenhouse_service_id`),  INDEX `index_greenhouses_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `readings` CASCADE[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE `readings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `air_humidity` float(24), `air_temperature` float(24), `soil_moisture` float(24), `red_light_intensity` float(24), `blue_light_intensity` float(24), `green_light_intensity` float(24), `outside_light_intensity` float(24), `fan_status` tinyint(1), `roof_door_position` float(24), `front_door_status` tinyint(1), `wattering_status` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_readings_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_users_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_users_on_email`  (`email`), UNIQUE INDEX `index_users_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (19.5ms)[0m  [1m[35mALTER TABLE `decisions` ADD CONSTRAINT `fk_rails_dc6576be49`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (15.3ms)[0m  [1m[35mALTER TABLE `greenhouses` ADD CONSTRAINT `fk_rails_b9d2c7e3b9`
+FOREIGN KEY (`greenhouse_service_id`)
+  REFERENCES `greenhouse_services` (`id`)
+[0m
+  [1m[35m (15.4ms)[0m  [1m[35mALTER TABLE `readings` ADD CONSTRAINT `fk_rails_e14a1d2f06`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (6.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180903084059)[0m
+  [1m[35m (12.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180820214444),
+(20180824104252),
+(20180824122912),
+(20180825190333),
+(20180825164905),
+(20180903082636),
+(20180819145035),
+(20180825190107),
+(20180902224554),
+(20180801224702);
+
+[0m
+  [1m[35m (26.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-09-03 09:19:03', '2018-09-03 09:19:03')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `actions` CASCADE[0m
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE `actions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `decisions` CASCADE[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE `decisions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255) NOT NULL, `origin` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_decisions_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouse_services` CASCADE[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE `greenhouse_services` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_greenhouse_services_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_greenhouse_services_on_email`  (`email`), UNIQUE INDEX `index_greenhouse_services_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouses` CASCADE[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE `greenhouses` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `location` varchar(255), `description` varchar(255), `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_service_id` bigint,  INDEX `index_greenhouses_on_greenhouse_service_id`  (`greenhouse_service_id`),  INDEX `index_greenhouses_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `readings` CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE `readings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `air_humidity` float(24), `air_temperature` float(24), `soil_moisture` float(24), `red_light_intensity` float(24), `blue_light_intensity` float(24), `green_light_intensity` float(24), `outside_light_intensity` float(24), `fan_status` tinyint(1), `roof_door_position` float(24), `front_door_status` tinyint(1), `wattering_status` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_readings_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_users_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_users_on_email`  (`email`), UNIQUE INDEX `index_users_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (13.6ms)[0m  [1m[35mALTER TABLE `decisions` ADD CONSTRAINT `fk_rails_dc6576be49`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (14.0ms)[0m  [1m[35mALTER TABLE `greenhouses` ADD CONSTRAINT `fk_rails_b9d2c7e3b9`
+FOREIGN KEY (`greenhouse_service_id`)
+  REFERENCES `greenhouse_services` (`id`)
+[0m
+  [1m[35m (15.2ms)[0m  [1m[35mALTER TABLE `readings` ADD CONSTRAINT `fk_rails_e14a1d2f06`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180903084059)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180820214444),
+(20180824104252),
+(20180824122912),
+(20180825190333),
+(20180825164905),
+(20180903082636),
+(20180819145035),
+(20180825190107),
+(20180902224554),
+(20180801224702);
+
+[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-09-03 09:19:03', '2018-09-03 09:19:03')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `value` = 'test' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'email@email.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'email@email.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = NULL[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'email@email.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'emaiaal@email.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'emaiaal@email.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'emaiaal@email.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'emaiaal@email.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (3.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (45.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS `greenhouse_server_development`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (21.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `greenhouse_server_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `greenhouse_server_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `greenhouse_server_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `actions` CASCADE[0m
+  [1m[35m (24.3ms)[0m  [1m[35mCREATE TABLE `actions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `decisions` CASCADE[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `decisions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255) NOT NULL, `origin` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_decisions_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouse_services` CASCADE[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE `greenhouse_services` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_greenhouse_services_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_greenhouse_services_on_email`  (`email`), UNIQUE INDEX `index_greenhouse_services_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouses` CASCADE[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE `greenhouses` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `location` varchar(255), `description` varchar(255), `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_service_id` bigint,  INDEX `index_greenhouses_on_greenhouse_service_id`  (`greenhouse_service_id`),  INDEX `index_greenhouses_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `readings` CASCADE[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE `readings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `air_humidity` float(24), `air_temperature` float(24), `soil_moisture` float(24), `red_light_intensity` float(24), `blue_light_intensity` float(24), `green_light_intensity` float(24), `outside_light_intensity` float(24), `fan_status` tinyint(1), `roof_door_position` float(24), `front_door_status` tinyint(1), `wattering_status` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_readings_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_users_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_users_on_email`  (`email`), UNIQUE INDEX `index_users_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (15.7ms)[0m  [1m[35mALTER TABLE `decisions` ADD CONSTRAINT `fk_rails_dc6576be49`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (14.7ms)[0m  [1m[35mALTER TABLE `greenhouses` ADD CONSTRAINT `fk_rails_b9d2c7e3b9`
+FOREIGN KEY (`greenhouse_service_id`)
+  REFERENCES `greenhouse_services` (`id`)
+[0m
+  [1m[35m (15.8ms)[0m  [1m[35mALTER TABLE `readings` ADD CONSTRAINT `fk_rails_e14a1d2f06`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (39.0ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180903084059)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180820214444),
+(20180824104252),
+(20180824122912),
+(20180825190333),
+(20180825164905),
+(20180903082636),
+(20180819145035),
+(20180825190107),
+(20180902224554),
+(20180801224702);
+
+[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-09-03 09:23:22', '2018-09-03 09:23:22')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `actions` CASCADE[0m
+  [1m[35m (25.5ms)[0m  [1m[35mCREATE TABLE `actions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `decisions` CASCADE[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE `decisions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255) NOT NULL, `origin` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_decisions_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouse_services` CASCADE[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE `greenhouse_services` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_greenhouse_services_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_greenhouse_services_on_email`  (`email`), UNIQUE INDEX `index_greenhouse_services_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouses` CASCADE[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE `greenhouses` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `location` varchar(255), `description` varchar(255), `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_service_id` bigint,  INDEX `index_greenhouses_on_greenhouse_service_id`  (`greenhouse_service_id`),  INDEX `index_greenhouses_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `readings` CASCADE[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE `readings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `air_humidity` float(24), `air_temperature` float(24), `soil_moisture` float(24), `red_light_intensity` float(24), `blue_light_intensity` float(24), `green_light_intensity` float(24), `outside_light_intensity` float(24), `fan_status` tinyint(1), `roof_door_position` float(24), `front_door_status` tinyint(1), `wattering_status` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_readings_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_users_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_users_on_email`  (`email`), UNIQUE INDEX `index_users_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (14.6ms)[0m  [1m[35mALTER TABLE `decisions` ADD CONSTRAINT `fk_rails_dc6576be49`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (17.8ms)[0m  [1m[35mALTER TABLE `greenhouses` ADD CONSTRAINT `fk_rails_b9d2c7e3b9`
+FOREIGN KEY (`greenhouse_service_id`)
+  REFERENCES `greenhouse_services` (`id`)
+[0m
+  [1m[35m (29.7ms)[0m  [1m[35mALTER TABLE `readings` ADD CONSTRAINT `fk_rails_e14a1d2f06`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180903084059)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180820214444),
+(20180824104252),
+(20180824122912),
+(20180825190333),
+(20180825164905),
+(20180903082636),
+(20180819145035),
+(20180825190107),
+(20180902224554),
+(20180801224702);
+
+[0m
+  [1m[35m (16.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-09-03 09:23:22', '2018-09-03 09:23:22')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `value` = 'test' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teste@mail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teste@mail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (38.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (25.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teste@teste.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teste@teste.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teste@teste.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (6.2ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'service@email.com' LIMIT 1[0m
+  [1m[35m (28.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = 'XQsk_QAx2tx1q4hbFyzs'[0m
+  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO `greenhouse_services` (`email`, `encrypted_password`, `created_at`, `updated_at`, `authentication_token`) VALUES ('service@email.com', '$2a$11$81NeyH.riUKc1YjNC4Orq./05UqCqrMpJHiuDyo7wCRs89M4CuoT.', '2018-09-03 09:30:03', '2018-09-03 09:30:03', 'XQsk_QAx2tx1q4hbFyzs')[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'email@email.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'emaaaail@email.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'a@a.com' LIMIT 1[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'WxttXKwPJqmVYVcW-KMo'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `authentication_token`) VALUES ('a@a.com', '$2a$11$mkEIYfpgoiDEXdB2RW8mX.fDOH3QOZGV42QG574fM5HSN2eY7WjyS', '2018-09-03 09:36:39', '2018-09-03 09:36:39', 'WxttXKwPJqmVYVcW-KMo')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (5.4ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teste@teste.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teste@teste.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = 'oyQxFsZszfgAocNxUzp3'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `authentication_token`) VALUES ('teste@teste.com', '$2a$11$x/pjng7/FuyzN6eK2iPlJerSj7nxgduvIHzOoDex7rbS6VaLZu0my', '2018-09-03 09:37:28', '2018-09-03 09:37:28', 'oyQxFsZszfgAocNxUzp3')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'service@email.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'service@email.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'service@email.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'teste@teste.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = 'LVUMeTfFZx5DKZNMyuhT'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `greenhouse_services` (`email`, `encrypted_password`, `created_at`, `updated_at`, `authentication_token`) VALUES ('teste@teste.com', '$2a$11$9WAoL9KL/y6VG4rMXKC9rOjcXNQVwkwTxqlGqeYjFRhH/C24freae', '2018-09-03 09:38:28', '2018-09-03 09:38:28', 'LVUMeTfFZx5DKZNMyuhT')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'testea@teste.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = 'dfH7WzyN5csuSs2xcL1G'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `greenhouse_services` (`email`, `encrypted_password`, `created_at`, `updated_at`, `authentication_token`) VALUES ('testea@teste.com', '$2a$11$jtDFzJKEmpYLdo9Tu3Dhrek7n16vt/Ciu/5u0auxP8CB1zdj11hz2', '2018-09-03 09:38:45', '2018-09-03 09:38:45', 'dfH7WzyN5csuSs2xcL1G')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'service@teste.com' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '56uUkmKcdKyyvRqW9v4h'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `greenhouse_services` (`email`, `encrypted_password`, `created_at`, `updated_at`, `authentication_token`) VALUES ('service@teste.com', '$2a$11$PRG9jcs8gXdK.tDg6BxdB.dJ2jbrtt5JfzyilMyPbT3yI.j3IcmgW', '2018-09-03 09:38:54', '2018-09-03 09:38:54', '56uUkmKcdKyyvRqW9v4h')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teste@teste.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'service@teste.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (45.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `greenhouse_server_development`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (37.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `greenhouse_server_test`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE `greenhouse_server_development` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `greenhouse_server_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `actions` CASCADE[0m
+  [1m[35m (34.0ms)[0m  [1m[35mCREATE TABLE `actions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `decisions` CASCADE[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE `decisions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255) NOT NULL, `origin` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_decisions_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouse_services` CASCADE[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE `greenhouse_services` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_greenhouse_services_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_greenhouse_services_on_email`  (`email`), UNIQUE INDEX `index_greenhouse_services_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouses` CASCADE[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE `greenhouses` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `location` varchar(255), `description` varchar(255), `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_service_id` bigint,  INDEX `index_greenhouses_on_greenhouse_service_id`  (`greenhouse_service_id`),  INDEX `index_greenhouses_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `readings` CASCADE[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE `readings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `air_humidity` float(24), `air_temperature` float(24), `soil_moisture` float(24), `red_light_intensity` float(24), `blue_light_intensity` float(24), `green_light_intensity` float(24), `outside_light_intensity` float(24), `fan_status` tinyint(1), `roof_door_position` float(24), `front_door_status` tinyint(1), `wattering_status` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_readings_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_users_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_users_on_email`  (`email`), UNIQUE INDEX `index_users_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (38.0ms)[0m  [1m[35mALTER TABLE `decisions` ADD CONSTRAINT `fk_rails_dc6576be49`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (14.2ms)[0m  [1m[35mALTER TABLE `greenhouses` ADD CONSTRAINT `fk_rails_b9d2c7e3b9`
+FOREIGN KEY (`greenhouse_service_id`)
+  REFERENCES `greenhouse_services` (`id`)
+[0m
+  [1m[35m (17.2ms)[0m  [1m[35mALTER TABLE `readings` ADD CONSTRAINT `fk_rails_e14a1d2f06`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180903084059)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180820214444),
+(20180824104252),
+(20180824122912),
+(20180825190333),
+(20180825164905),
+(20180903082636),
+(20180819145035),
+(20180825190107),
+(20180902224554),
+(20180801224702);
+
+[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-09-03 09:39:18', '2018-09-03 09:39:18')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `actions` CASCADE[0m
+  [1m[35m (22.8ms)[0m  [1m[35mCREATE TABLE `actions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `decisions` CASCADE[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE `decisions` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` varchar(255) NOT NULL, `origin` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_decisions_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouse_services` CASCADE[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE `greenhouse_services` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_greenhouse_services_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_greenhouse_services_on_email`  (`email`), UNIQUE INDEX `index_greenhouse_services_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `greenhouses` CASCADE[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE `greenhouses` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `location` varchar(255), `description` varchar(255), `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_service_id` bigint,  INDEX `index_greenhouses_on_greenhouse_service_id`  (`greenhouse_service_id`),  INDEX `index_greenhouses_on_user_id`  (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `readings` CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE `readings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `air_humidity` float(24), `air_temperature` float(24), `soil_moisture` float(24), `red_light_intensity` float(24), `blue_light_intensity` float(24), `green_light_intensity` float(24), `outside_light_intensity` float(24), `fan_status` tinyint(1), `roof_door_position` float(24), `front_door_status` tinyint(1), `wattering_status` tinyint(1), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `greenhouse_id` bigint,  INDEX `index_readings_on_greenhouse_id`  (`greenhouse_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `authentication_token` varchar(30), UNIQUE INDEX `index_users_on_authentication_token`  (`authentication_token`), UNIQUE INDEX `index_users_on_email`  (`email`), UNIQUE INDEX `index_users_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (17.8ms)[0m  [1m[35mALTER TABLE `decisions` ADD CONSTRAINT `fk_rails_dc6576be49`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (16.2ms)[0m  [1m[35mALTER TABLE `greenhouses` ADD CONSTRAINT `fk_rails_b9d2c7e3b9`
+FOREIGN KEY (`greenhouse_service_id`)
+  REFERENCES `greenhouse_services` (`id`)
+[0m
+  [1m[35m (16.1ms)[0m  [1m[35mALTER TABLE `readings` ADD CONSTRAINT `fk_rails_e14a1d2f06`
+FOREIGN KEY (`greenhouse_id`)
+  REFERENCES `greenhouses` (`id`)
+[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180903084059)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180820214444),
+(20180824104252),
+(20180824122912),
+(20180825190333),
+(20180825164905),
+(20180903082636),
+(20180819145035),
+(20180825190107),
+(20180902224554),
+(20180801224702);
+
+[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-09-03 09:39:18', '2018-09-03 09:39:18')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `value` = 'test' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teste@teste.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` WHERE `users`.`authentication_token` = '9TwscAUVSeszAUCMxFVk'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `authentication_token`) VALUES ('teste@teste.com', '$2a$11$a7yL.0hVf1dsVQnHm8C0V.xckMTKori./kDi8HX.FSZ7BX02USthG', '2018-09-03 09:39:27', '2018-09-03 09:39:27', '9TwscAUVSeszAUCMxFVk')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'service@teste.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = 'c26Ct8iv2nwxs64GMmp7'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `greenhouse_services` (`email`, `encrypted_password`, `created_at`, `updated_at`, `authentication_token`) VALUES ('service@teste.com', '$2a$11$jD.isiYjQWnwnBkeyakcHOUKUwVGznCpn/TmZA05q2Vl6IKZD6J52', '2018-09-03 09:39:31', '2018-09-03 09:39:31', 'c26Ct8iv2nwxs64GMmp7')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT  `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `greenhouses` (`location`, `description`, `user_id`, `created_at`, `updated_at`, `greenhouse_service_id`) VALUES ('nowhere', 'estufa de teste', 1, '2018-09-03 09:40:52', '2018-09-03 09:40:52', 1)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGreenhouse Load (18.2ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`user_id` = 1 LIMIT 11[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'service@teste.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'servicea@teste.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = 'sboxsDpovXNRrtrHQA8H'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `greenhouse_services` (`email`, `encrypted_password`, `created_at`, `updated_at`, `authentication_token`) VALUES ('servicea@teste.com', '$2a$11$eKuzzrzb1TjO./lBggslqe10ouwl.rIgK1YZTDL/ztkmBd42y/5im', '2018-09-03 09:42:11', '2018-09-03 09:42:11', 'sboxsDpovXNRrtrHQA8H')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`email` = BINARY 'aaaservice@teste.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = 'JoMc58_f5jkczzZbsxoF'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `greenhouse_services` (`email`, `encrypted_password`, `created_at`, `updated_at`, `authentication_token`) VALUES ('aaaservice@teste.com', '$2a$11$HrUvCzZNzHRFn28hmpeSnOYsc7Iew1B7yANe.HCoSDBP3FM3Xi/hi', '2018-09-03 09:43:29', '2018-09-03 09:43:29', 'JoMc58_f5jkczzZbsxoF')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.5ms)[0m  [1m[34mSELECT  `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`id` = 3 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `greenhouses` (`location`, `description`, `user_id`, `created_at`, `updated_at`, `greenhouse_service_id`) VALUES ('nowhere', 'estufa de teste', 1, '2018-09-03 09:43:54', '2018-09-03 09:43:54', 3)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGreenhouse Load (0.6ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 3 LIMIT 1[0m

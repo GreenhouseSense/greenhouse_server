@@ -115,7 +115,7 @@ class Api::V1::DecisionsController < ApplicationController
   private
    # Never trust parameters from the scary internet, only allow the white list through.
     def add_decision_params      
-      params.permit(:atoken, :origin, :description, :greenhouse_id)
+      params.permit(:origin, :description, :atoken, :greenhouse_id)
     end
 
 end

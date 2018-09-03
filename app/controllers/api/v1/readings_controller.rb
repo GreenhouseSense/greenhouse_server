@@ -3,7 +3,6 @@ class Api::V1::ReadingsController < ApplicationController
   before_action  :test_token_expiration
   def add
     add_reading_params
-
     new_reading = Decision.new(greenhouse_id: add_decision_params[:greenhouse_id],
                               air_humidity: add_decision_params[:air_humidity], 
                               air_temperature: add_decision_params[:air_temperature], 
@@ -15,8 +14,7 @@ class Api::V1::ReadingsController < ApplicationController
                               fan_status: add_decision_params[:fan_status], 
                               roof_door_position: add_decision_params[:roof_door_position], 
                               front_door_status: add_decision_params[:front_door_status], 
-                              wattering_status: add_decision_params[:wattering_status]
-                              )
+                              wattering_status: add_decision_params[:wattering_status])
     if new_reading.save
       render json: {status: 'SUCCESS', message: 'Added new reading', data: new_reading}, status: :ok 
     else
