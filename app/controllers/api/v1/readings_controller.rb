@@ -33,16 +33,23 @@ class Api::V1::ReadingsController < ApplicationController
   def get_last
     # GET Method to retreive the last readings added
     get_reading_params_last
-    if Reading.count == 0
-      render json: {status: 'ERROR', message: 'No readings found', data: 0},status: :ok
-    else
+    # if Reading.count == 0
+    #   render json: {status: 'ERROR', message: 'No readings found', data: 0},status: :ok
+    # else
       if((Greenhouse.where('id = ?',params[:greenhouse_id]).where('user_id = ?', @user[0].id)).count == 1)
         last_reading = Reading.where('greenhouse_id = ?',params[:greenhouse_id]).order("created_at").last
-        render json: {status: 'SUCCESS', message: 'Loaded readings', data: last_reading},status: :ok
+        if last_reading.nil? || last_reading.count == 0
+          msg_str = "No readgins found"      
+        else
+          msg_str = "Loaded last reading"
+        end
+        render json: {status: 'SUCCESS', message: msg_str, data: last_reading},status: :ok
+        return true
       else
         render json: {status: 'ERROR', message: 'You have not permission to access this greenhouse', data:0},status: :unprocessable_entity
+        return false
       end
-    end
+    # end
   end
 
 
@@ -63,15 +70,15 @@ class Api::V1::ReadingsController < ApplicationController
       return true
     end
 
-    if Reading.count. == 0
-      render json: {status: 'ERROR', message: 'No readings found', data: 0},status: :ok
-      return true
-    end
-    
     if((Greenhouse.where('id = ?',params[:greenhouse_id]).where('user_id = ?', @user[0].id)).count == 1)  
+      # if Reading.count. == 0
+      #   render json: {status: 'ERROR', message: 'No readings found', data: 0},status: :ok
+      #   return true
+      # end
       week_days = weeks * 7
       weeks_readings = Reading.where('greenhouse_id = ?',params[:greenhouse_id]).where('created_at >= ?', Time.zone.now - week_days.days)
-      if weeks_readings == 0
+      
+      if weeks_readings.nil? || weeks_readings.count == 0
         msg_str = "No records for last #{weeks} weeks"      
       else
         msg_str = "Loaded readings from last #{weeks} weeks"
@@ -81,6 +88,7 @@ class Api::V1::ReadingsController < ApplicationController
       return true
     else
       render json: {status: 'ERROR', message: 'You have not permission to access this greenhouse', data:0},status: :unprocessable_entity
+      return false
     end
   end
 
@@ -103,19 +111,24 @@ class Api::V1::ReadingsController < ApplicationController
       return true
     end
 
-    if Reading.count == 0
-      render json: {status: 'ERROR', message: 'No readings found', data: 0},status: :ok
-      return true
-    end
+    if((Greenhouse.where('id = ?',params[:greenhouse_id]).where('user_id = ?', @user[0].id)).count == 1)  
+      # if Reading.count == 0
+      #   render json: {status: 'ERROR', message: 'No readings found', data: 0},status: :ok
+      #   return true
+      # end
 
-    months_readings = Reading.where('greenhouse_id = ?',params[:greenhouse_id]).where('created_at >= ?', Time.zone.now - months.months) 
-    if months_readings == 0
-        msg_str = "No readings for last #{months} months"      
-      else
-        msg_str = "Loaded readings from last #{months} months"
-      end
-      render json: {status: 'SUCCESS', message: msg_str, data: months_readings},status: :ok
-    return true
+      months_readings = Reading.where('greenhouse_id = ?',params[:greenhouse_id]).where('created_at >= ?', Time.zone.now - months.months) 
+      if months_readings.nil? || months_readings.count == 0
+          msg_str = "No readings for last #{months} months"      
+        else
+          msg_str = "Loaded readings from last #{months} months"
+        end
+        render json: {status: 'SUCCESS', message: msg_str, data: months_readings},status: :ok
+      return true
+    else
+      render json: {status: 'ERROR', message: 'You have not permission to access this greenhouse', data:0},status: :unprocessable_entity
+      return false
+    end
   end
 
 
@@ -137,19 +150,24 @@ class Api::V1::ReadingsController < ApplicationController
       return true
     end
 
-    if Reading.count == 0
-      render json: {status: 'ERROR', message: 'No readings found', data: 0},status: :ok
-      return true
-    end
+    if((Greenhouse.where('id = ?',params[:greenhouse_id]).where('user_id = ?', @user[0].id)).count == 1)  
+      # if Reading.count == 0
+      #   render json: {status: 'ERROR', message: 'No readings found', data: 0},status: :ok
+      #   return true
+      # end
 
-    years_readings = Reading.where('greenhouse_id = ?',params[:greenhouse_id]).where('created_at >= ?', Time.zone.now - years.years) 
-    if years_readings == 0
-      msg_str = "No readings for last #{years} years"      
+      years_readings = Reading.where('greenhouse_id = ?',params[:greenhouse_id]).where('created_at >= ?', Time.zone.now - years.years) 
+      if years_readings.nil? || years_readings.count == 0
+        msg_str = "No readings for last #{years} years"      
+      else
+        msg_str = "Loaded readings from last #{years} years"
+      end
+      render json: {status: 'SUCCESS', message: msg_str, data: years_readings},status: :ok
+      return true
     else
-      msg_str = "Loaded readings from last #{years} years"
+      render json: {status: 'ERROR', message: 'You have not permission to access this greenhouse', data:0},status: :unprocessable_entity
+      return false
     end
-    render json: {status: 'SUCCESS', message: msg_str, data: years_readings},status: :ok
-    return true
   end
 
 
@@ -164,7 +182,7 @@ class Api::V1::ReadingsController < ApplicationController
     end
 
     def get_reading_params_last
-      params.require(:atoken,:greenhouse_id)
+      params.require([:atoken,:greenhouse_id])
     end
     def get_reading_params_weeks
       params.require([:atoken,:weeks,:greenhouse_id])
