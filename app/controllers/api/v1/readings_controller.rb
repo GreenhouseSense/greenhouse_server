@@ -8,18 +8,31 @@ class Api::V1::ReadingsController < ApplicationController
   #--------------------------------------------------------------------------------#  
   def add
     add_reading_params
+    # puts @gserv[0].greenhouse.id
+    # new_reading = Reading.new(greenhouse_id: @gserv[0].greenhouse.id,
+    #                           air_humidity: add_reading_params[:air_humidity], 
+    #                           air_temperature: add_reading_params[:air_temperature], 
+    #                           soil_moisture: add_reading_params[:soil_moisture], 
+    #                           red_light_intensity: add_reading_params[:red_light_intensity], 
+    #                           blue_light_intensity: add_reading_params[:blue_light_intensity], 
+    #                           green_light_intensity: add_reading_params[:green_light_intensity], 
+    #                           outside_light_intensity: add_reading_params[:outside_light_intensity], 
+    #                           fan_status: add_reading_params[:fan_status], 
+    #                           roof_door_position: add_reading_params[:roof_door_position], 
+    #                           front_door_status: add_reading_params[:front_door_status], 
+    #                           wattering_status: add_reading_params[:wattering_status])
     new_reading = Reading.new(greenhouse_id: @gserv[0].greenhouse.id,
-                              air_humidity: add_reading_params[:air_humidity], 
-                              air_temperature: add_reading_params[:air_temperature], 
-                              soil_moisture: add_reading_params[:soil_moisture], 
-                              red_light_intensity: add_reading_params[:red_light_intensity], 
-                              blue_light_intensity: add_reading_params[:blue_light_intensity], 
-                              green_light_intensity: add_reading_params[:green_light_intensity], 
-                              outside_light_intensity: add_reading_params[:outside_light_intensity], 
-                              fan_status: add_reading_params[:fan_status], 
-                              roof_door_position: add_reading_params[:roof_door_position], 
-                              front_door_status: add_reading_params[:front_door_status], 
-                              wattering_status: add_reading_params[:wattering_status])
+                              air_humidity: params[:air_humidity], 
+                              air_temperature: params[:air_temperature], 
+                              soil_moisture: params[:soil_moisture], 
+                              red_light_intensity: params[:red_light_intensity], 
+                              blue_light_intensity: params[:blue_light_intensity], 
+                              green_light_intensity: params[:green_light_intensity], 
+                              outside_light_intensity: params[:outside_light_intensity], 
+                              fan_status: params[:fan_status], 
+                              roof_door_position: params[:roof_door_position], 
+                              front_door_status: params[:front_door_status], 
+                              wattering_status: params[:wattering_status])
     if new_reading.save
       render json: {status: 'SUCCESS', message: 'Added new reading', data: new_reading.as_json(:except => [:greenhouse_id])}, status: :ok 
     else
@@ -174,11 +187,11 @@ class Api::V1::ReadingsController < ApplicationController
   private
    # Never trust parameters from the scary internet, only allow the white list through.
     def add_reading_params      
-      params.require(:air_humidity, :air_temperature, :soil_moisture, 
+      params.require([:air_humidity, :air_temperature, :soil_moisture, 
                     :red_light_intensity, :blue_light_intensity, 
                     :green_light_intensity, :outside_light_intensity, 
                     :fan_status, :roof_door_position, :front_door_status, 
-                    :wattering_status, :atoken)
+                    :wattering_status, :atoken])
     end
 
     def get_reading_params_last

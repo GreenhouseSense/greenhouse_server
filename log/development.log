@@ -9578,3 +9578,148 @@ Processing by Api::V1::ReadingsController#get_years as */*
 Completed 200 OK in 43ms (Views: 31.3ms | ActiveRecord: 6.0ms)
 
 
+  [1m[36mGreenhouseService Load (0.5ms)[0m  [1m[34mSELECT  `greenhouse_services`.* FROM `greenhouse_services` ORDER BY `greenhouse_services`.`id` ASC LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.4ms)[0m  [1m[34mSELECT  `greenhouse_services`.* FROM `greenhouse_services` ORDER BY `greenhouse_services`.`id` ASC LIMIT 1[0m
+  [1m[36mGreenhouse Load (6.9ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 10:00:27 +0100
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 2.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 12, expected 1)):
+  
+app/controllers/api/v1/readings_controller.rb:177:in `add_reading_params'
+app/controllers/api/v1/readings_controller.rb:10:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0,8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 10:00:42 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0,8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 3.0ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/api/v1/readings_controller.rb:12:in `[]'
+app/controllers/api/v1/readings_controller.rb:12:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0.8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 10:01:23 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0.8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.5ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.1ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/api/v1/readings_controller.rb:12:in `[]'
+app/controllers/api/v1/readings_controller.rb:12:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0.8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 10:01:37 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0.8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 2.9ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/api/v1/readings_controller.rb:13:in `[]'
+app/controllers/api/v1/readings_controller.rb:13:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0.8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 10:02:36 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0.8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.2ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.9ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/api/v1/readings_controller.rb:13:in `[]'
+app/controllers/api/v1/readings_controller.rb:13:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0.8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 10:03:13 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0.8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.4ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.4ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.8, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-04 09:03:14', '2018-09-04 09:03:14', 1)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 81ms (Views: 0.4ms | ActiveRecord: 9.2ms)
+
+
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0.8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 10:04:19 +0100
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/readings_controller.rb:216: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/readings_controller.rb:216: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0.8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 10:04:36 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0.8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.4ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (4.6ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.8, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-04 09:04:36', '2018-09-04 09:04:36', 1)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 69ms (Views: 0.6ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0.8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 10:04:50 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0.8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 3.3ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/api/v1/readings_controller.rb:25:in `[]'
+app/controllers/api/v1/readings_controller.rb:25:in `add'
+Started POST "/api/v1/readings/add?air_temperature=20&soil_moisture=0.8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 10:05:06 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_temperature"=>"20", "soil_moisture"=>"0.8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+Completed 400 Bad Request in 21ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: air_humidity):
+  
+app/controllers/api/v1/readings_controller.rb:190:in `add_reading_params'
+app/controllers/api/v1/readings_controller.rb:10:in `add'
+Started POST "/api/v1/readings/add?air_humidity=0.001&air_temperature=20&soil_moisture=0.8&red_light_intensity=50&blue_light_intensity=20&green_light_intensity=40&outside_light_intensity=23123&fan_status=false&roof_door_position=102&front_door_status=0&wattering_status=false&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-04 10:05:09 +0100
+Processing by Api::V1::ReadingsController#add as */*
+  Parameters: {"air_humidity"=>"0.001", "air_temperature"=>"20", "soil_moisture"=>"0.8", "red_light_intensity"=>"50", "blue_light_intensity"=>"20", "green_light_intensity"=>"40", "outside_light_intensity"=>"23123", "fan_status"=>"false", "roof_door_position"=>"102", "front_door_status"=>"0", "wattering_status"=>"false", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mGreenhouseService Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+  [1m[36mGreenhouseService Load (0.3ms)[0m  [1m[34mSELECT `greenhouse_services`.* FROM `greenhouse_services` WHERE `greenhouse_services`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D'[0m
+  [1m[36mGreenhouse Load (0.3ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`greenhouse_service_id` = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreenhouse Load (0.4ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `readings` (`air_humidity`, `air_temperature`, `soil_moisture`, `red_light_intensity`, `blue_light_intensity`, `green_light_intensity`, `outside_light_intensity`, `fan_status`, `roof_door_position`, `front_door_status`, `wattering_status`, `created_at`, `updated_at`, `greenhouse_id`) VALUES (0.001, 20.0, 0.8, 50.0, 20.0, 40.0, 23123.0, 0, 102.0, 0, 0, '2018-09-04 09:05:09', '2018-09-04 09:05:09', 1)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 50ms (Views: 0.6ms | ActiveRecord: 4.5ms)
+
+
