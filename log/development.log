@@ -9723,3 +9723,223 @@ Processing by Api::V1::ReadingsController#add as */*
 Completed 200 OK in 50ms (Views: 0.6ms | ActiveRecord: 4.5ms)
 
 
+Started GET "/api/v1/decisions/get_years?years=1&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-06 09:21:50 +0100
+  [1m[35m (36.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/Users/PedroOliveira/Documents/RubyOnRails/greenhouse_server/greenhouse_server/app/controllers/api/v1/decisions_controller.rb:23: syntax error, unexpected keyword_else, expecting '}'):
+  
+app/controllers/api/v1/decisions_controller.rb:23: syntax error, unexpected keyword_else, expecting '}'
+Started GET "/api/v1/decisions/get_years?years=1&atoken=1rfR9WixdRpN6sjN9g5D" for 127.0.0.1 at 2018-09-06 09:22:55 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"years"=>"1", "atoken"=>"1rfR9WixdRpN6sjN9g5D"}
+  [1m[36mUser Exists (24.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+Filter chain halted as :test_user_token rendered or redirected
+Completed 422 Unprocessable Entity in 78ms (Views: 0.6ms | ActiveRecord: 49.3ms)
+
+
+Started GET "/api/v1/decisions/add?atoken=9TwscAUVSeszAUCMxFVk&greenhouse_id=1&years=1" for 127.0.0.1 at 2018-09-06 09:23:11 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decisions/add"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decision/get_years?atoken=9TwscAUVSeszAUCMxFVk&greenhouse_id=1&years=1" for 127.0.0.1 at 2018-09-06 09:23:26 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/decision/get_years"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/decisions/get_years?atoken=9TwscAUVSeszAUCMxFVk&greenhouse_id=1&years=1" for 127.0.0.1 at 2018-09-06 09:23:33 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"atoken"=>"9TwscAUVSeszAUCMxFVk", "greenhouse_id"=>"1", "years"=>"1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '9TwscAUVSeszAUCMxFVk' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '9TwscAUVSeszAUCMxFVk'[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '1') AND (user_id = 1)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings` WHERE (greenhouse_id = '1') AND (created_at >= '2017-09-06 08:23:33.101745')[0m
+  [1m[36mReading Load (0.4ms)[0m  [1m[34mSELECT `readings`.* FROM `readings` WHERE (greenhouse_id = '1') AND (created_at >= '2017-09-06 08:23:33.101745')[0m
+Completed 200 OK in 119ms (Views: 19.1ms | ActiveRecord: 54.1ms)
+
+
+Started GET "/api/v1/decisions/get_years?atoken=9TwscAUVSeszAUCMxFVk&greenhouse_id=2&years=1" for 127.0.0.1 at 2018-09-06 09:23:41 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"atoken"=>"9TwscAUVSeszAUCMxFVk", "greenhouse_id"=>"2", "years"=>"1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '9TwscAUVSeszAUCMxFVk' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '9TwscAUVSeszAUCMxFVk'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '2') AND (user_id = 1)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `readings` WHERE (greenhouse_id = '2') AND (created_at >= '2017-09-06 08:23:41.794472')[0m
+  [1m[36mReading Load (0.3ms)[0m  [1m[34mSELECT `readings`.* FROM `readings` WHERE (greenhouse_id = '2') AND (created_at >= '2017-09-06 08:23:41.794472')[0m
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 1.9ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGreenhouse Load (6.9ms)[0m  [1m[34mSELECT  `greenhouses`.* FROM `greenhouses` WHERE `greenhouses`.`user_id` = 1 LIMIT 11[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+Started GET "/api/v1/decisions/get_years?atoken=8fdtoWuMMXxbpup4XuFs&greenhouse_id=2&years=1" for 127.0.0.1 at 2018-09-06 09:24:33 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"atoken"=>"8fdtoWuMMXxbpup4XuFs", "greenhouse_id"=>"2", "years"=>"1"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '2') AND (user_id = 2)[0m
+Completed 422 Unprocessable Entity in 8ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/decisions/get_years?atoken=8fdtoWuMMXxbpup4XuFs&greenhouse_id=1&years=1" for 127.0.0.1 at 2018-09-06 09:24:38 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"atoken"=>"8fdtoWuMMXxbpup4XuFs", "greenhouse_id"=>"1", "years"=>"1"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '1') AND (user_id = 2)[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/decisions/get_years?atoken=8fdtoWuMMXxbpup4XuFs&greenhouse_id=1" for 127.0.0.1 at 2018-09-06 09:24:40 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"atoken"=>"8fdtoWuMMXxbpup4XuFs", "greenhouse_id"=>"1"}
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs'[0m
+Completed 400 Bad Request in 4ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: years):
+  
+app/controllers/api/v1/decisions_controller.rb:190:in `get_decision_params_years'
+app/controllers/api/v1/decisions_controller.rb:138:in `get_years'
+Started GET "/api/v1/decisions/get_years?atoken=8fdtoWuMMXxbpup4XuFs&greenhouse_id=1&years=1" for 127.0.0.1 at 2018-09-06 09:24:46 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"atoken"=>"8fdtoWuMMXxbpup4XuFs", "greenhouse_id"=>"1", "years"=>"1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs'[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '1') AND (user_id = 2)[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/decisions/get_years?atoken=8fdtoWuMMXxbpup4XuFs&greenhouse_id=1&years=-1" for 127.0.0.1 at 2018-09-06 09:24:50 +0100
+Processing by Api::V1::DecisionsController#get_years as */*
+  Parameters: {"atoken"=>"8fdtoWuMMXxbpup4XuFs", "greenhouse_id"=>"1", "years"=>"-1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs'[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/decisions/get_months?atoken=8fdtoWuMMXxbpup4XuFs&greenhouse_id=1&months=-1" for 127.0.0.1 at 2018-09-06 09:25:02 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"atoken"=>"8fdtoWuMMXxbpup4XuFs", "greenhouse_id"=>"1", "months"=>"-1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs'[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/decisions/get_months?atoken=8fdtoWuMMXxbpup4XuFs&greenhouse_id=1&months=1" for 127.0.0.1 at 2018-09-06 09:25:06 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"atoken"=>"8fdtoWuMMXxbpup4XuFs", "greenhouse_id"=>"1", "months"=>"1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '1') AND (user_id = 2)[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/decisions/get_months?atoken=8fdtoWuMMXxbpup4XuFs&greenhouse_id=3&months=1" for 127.0.0.1 at 2018-09-06 09:25:10 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"atoken"=>"8fdtoWuMMXxbpup4XuFs", "greenhouse_id"=>"3", "months"=>"1"}
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '3') AND (user_id = 2)[0m
+Completed 422 Unprocessable Entity in 6ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/decisions/get_months?atoken=8fdtoWuMMXxbpup4XuFs&greenhouse_id=4&months=1" for 127.0.0.1 at 2018-09-06 09:25:13 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"atoken"=>"8fdtoWuMMXxbpup4XuFs", "greenhouse_id"=>"4", "months"=>"1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs' LIMIT 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '4') AND (user_id = 2)[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/decisions/get_months?atoken=8fdtoWuMMXxbpup4XuFs&greenhouse_id=1&months=1" for 127.0.0.1 at 2018-09-06 09:25:17 +0100
+Processing by Api::V1::DecisionsController#get_months as */*
+  Parameters: {"atoken"=>"8fdtoWuMMXxbpup4XuFs", "greenhouse_id"=>"1", "months"=>"1"}
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '1') AND (user_id = 2)[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/decisions/get_weeks?atoken=8fdtoWuMMXxbpup4XuFs&greenhouse_id=1&weeks=1" for 127.0.0.1 at 2018-09-06 09:25:28 +0100
+Processing by Api::V1::DecisionsController#get_weeks as */*
+  Parameters: {"atoken"=>"8fdtoWuMMXxbpup4XuFs", "greenhouse_id"=>"1", "weeks"=>"1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '8fdtoWuMMXxbpup4XuFs'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '1') AND (user_id = 2)[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/decisions/get_weeks?atoken=1rfR9WixdRpN6sjN9g5D&greenhouse_id=1&weeks=1" for 127.0.0.1 at 2018-09-06 09:25:34 +0100
+Processing by Api::V1::DecisionsController#get_weeks as */*
+  Parameters: {"atoken"=>"1rfR9WixdRpN6sjN9g5D", "greenhouse_id"=>"1", "weeks"=>"1"}
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '1rfR9WixdRpN6sjN9g5D' LIMIT 1[0m
+Filter chain halted as :test_user_token rendered or redirected
+Completed 422 Unprocessable Entity in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/decisions/get_weeks?atoken=9TwscAUVSeszAUCMxFVk&greenhouse_id=1&weeks=1" for 127.0.0.1 at 2018-09-06 09:25:45 +0100
+Processing by Api::V1::DecisionsController#get_weeks as */*
+  Parameters: {"atoken"=>"9TwscAUVSeszAUCMxFVk", "greenhouse_id"=>"1", "weeks"=>"1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '9TwscAUVSeszAUCMxFVk' LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '9TwscAUVSeszAUCMxFVk'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '1') AND (user_id = 1)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `decisions` WHERE (greenhouse_id = '1') AND (created_at >= '2018-08-30 08:25:45.203156')[0m
+  [1m[36mDecision Load (0.3ms)[0m  [1m[34mSELECT `decisions`.* FROM `decisions` WHERE (greenhouse_id = '1') AND (created_at >= '2018-08-30 08:25:45.203156')[0m
+Completed 200 OK in 46ms (Views: 0.6ms | ActiveRecord: 35.3ms)
+
+
+Started GET "/api/v1/decisions/get_weeks?atoken=9TwscAUVSeszAUCMxFVk&greenhouse_id=5&weeks=1" for 127.0.0.1 at 2018-09-06 09:25:52 +0100
+Processing by Api::V1::DecisionsController#get_weeks as */*
+  Parameters: {"atoken"=>"9TwscAUVSeszAUCMxFVk", "greenhouse_id"=>"5", "weeks"=>"1"}
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`authentication_token` = '9TwscAUVSeszAUCMxFVk' LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`authentication_token` = '9TwscAUVSeszAUCMxFVk'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `greenhouses` WHERE (id = '5') AND (user_id = 1)[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
